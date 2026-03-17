@@ -383,14 +383,7 @@ ul {
 }
 
 .section__subtitle::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 2px;
-    background-color: var(--color-gold);
+    content: none;
 }
 
 .subsection-title {
@@ -737,8 +730,9 @@ ul {
 /* Video Grid — smaller 9:16 cards */
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 200px));
     gap: var(--space-sm);
+    justify-content: center;
 }
 
 .video-card {
@@ -767,7 +761,7 @@ ul {
 
 .video-card__title {
     font-family: var(--font-heading);
-    font-size: var(--fs-h4);
+    font-size: var(--fs-body);
     font-weight: 500;
     color: var(--color-dark);
     margin-bottom: 0.2rem;
@@ -820,8 +814,9 @@ ul {
 
 .photo-carousel {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 240px));
     gap: var(--space-sm);
+    justify-content: center;
 }
 
 .photo-carousel img {
@@ -857,7 +852,7 @@ ul {
 
 .canvas-card__caption {
     font-family: var(--font-heading);
-    font-size: var(--fs-h4);
+    font-size: var(--fs-body);
     font-weight: 500;
     color: var(--color-dark);
     margin-top: var(--space-xs);
