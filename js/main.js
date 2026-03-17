@@ -1,9 +1,9 @@
 /* ============================================================
    LILY WANG — PORTFOLIO JAVASCRIPT
-   Navigation, animations, carousel, contact form
+   Navigation, animations, contact form
    ============================================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('contentRendered', () => {
 
     /* ==========================================
        1. MOBILE NAVIGATION
@@ -105,44 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => sectionObserver.observe(section));
 
     /* ==========================================
-       5. SPLIDE CAROUSEL
-       ========================================== */
-    if (typeof Splide !== 'undefined') {
-        new Splide('#brandCarousel', {
-            type:         'loop',
-            perPage:      3,
-            perMove:      1,
-            gap:          '1.5rem',
-            padding:      '1rem',
-            autoplay:     true,
-            interval:     4000,
-            pauseOnHover: true,
-            pauseOnFocus: true,
-            speed:        800,
-            easing:       'cubic-bezier(0.25, 0.1, 0.25, 1)',
-            pagination:   true,
-            arrows:       true,
-            drag:         true,
-            snap:         true,
-            lazyLoad:     'nearby',
-
-            breakpoints: {
-                1024: {
-                    perPage: 2,
-                    gap:     '1rem',
-                    padding: '0.5rem',
-                },
-                640: {
-                    perPage: 1,
-                    gap:     '0.75rem',
-                    padding: '0.5rem',
-                },
-            },
-        }).mount();
-    }
-
-    /* ==========================================
-       6. CONTACT FORM (MAILTO)
+       5. CONTACT FORM (MAILTO)
        ========================================== */
     const contactForm = document.getElementById('contactForm');
 
