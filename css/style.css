@@ -387,19 +387,6 @@ ul {
     text-align: center;
     margin: var(--space-lg) 0 var(--space-md);
     color: var(--color-dark);
-    position: relative;
-    padding-bottom: var(--space-md);
-}
-
-.subsection-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 2px;
-    background-color: var(--color-gold);
 }
 
 /* === ENGINEERING SECTION === */
@@ -737,7 +724,7 @@ ul {
 /* Video Grid — smaller 9:16 cards */
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 160px));
+    grid-template-columns: repeat(auto-fill, 150px);
     gap: var(--space-sm);
     justify-content: center;
 }
@@ -828,7 +815,7 @@ ul {
 
 .photo-carousel img {
     width: 100%;
-    aspect-ratio: 3 / 3.5;
+    aspect-ratio: 4 / 5;
     object-fit: cover;
     border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
@@ -846,7 +833,7 @@ ul {
 
 .canvas-card img {
     width: 100%;
-    aspect-ratio: 3 / 3.5;
+    aspect-ratio: 4 / 5;
     object-fit: cover;
     border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
@@ -877,6 +864,25 @@ ul {
     font-size: var(--fs-small);
     color: var(--color-gold);
     font-style: italic;
+}
+
+/* Experience section titles get gold underline */
+.engineering__experience .subsection-title,
+.experience-pt .section__subtitle {
+    position: relative;
+    padding-bottom: var(--space-md);
+}
+
+.engineering__experience .subsection-title::after,
+.experience-pt .section__subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: var(--color-gold);
 }
 
 /* === WORK EXPERIENCE — TIMELINE === */
