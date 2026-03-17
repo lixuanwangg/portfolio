@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     navInner.innerHTML = `
         <a href="#hero" class="navbar__logo">${esc(data.hero.name)}</a>
         <ul class="navbar__menu" id="navMenu">
-            <li><a href="#engineering" class="navbar__link">Professional</a></li>
-            <li><a href="#modelling" class="navbar__link">Creative</a></li>
+            <li><a href="#professional" class="navbar__link">Professional</a></li>
+            <li><a href="#creative" class="navbar__link">Creative</a></li>
             <li><a href="#experience-pt" class="navbar__link">Part-Time</a></li>
             <li><a href="#contact" class="navbar__link">Contact</a></li>
         </ul>
@@ -59,12 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
     /* === ENGINEERING === */
     const eng = data.engineering;
     main.innerHTML += `
-    <section class="section engineering" id="engineering">
+    <section class="section professional" id="professional">
         <div class="container">
             <h2 class="section__title reveal">${esc(eng.sectionTitle)}</h2>
             <p class="section__subtitle reveal">${esc(eng.sectionSubtitle)}</p>
 
-            <div class="engineering__education reveal">
+            <div class="professional__education reveal">
                 ${eng.education.map(e => `
                     <div class="education-card">
                         <h3>${esc(e.degree)}</h3>
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>`).join('')}
             </div>
 
-            <div class="engineering__skills reveal">
+            <div class="professional__skills reveal">
                 <h3 class="subsection-title">Technical Skills</h3>
                 <div class="skills-grid">
                     ${eng.skills.map(s => `
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
 
-            <div class="engineering__languages reveal">
+            <div class="professional__languages reveal">
                 <h3 class="subsection-title">Languages</h3>
                 <div class="languages-list">
                     ${eng.languages.map(l => `
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
 
-            <div class="engineering__projects reveal">
+            <div class="professional__projects reveal">
                 <h3 class="subsection-title">Projects</h3>
                 <div class="projects-grid">
                     ${eng.projects.map(p => `
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
 
-            <div class="engineering__experience reveal">
+            <div class="professional__experience reveal">
                 <h3 class="subsection-title">Professional Experience</h3>
                 <div class="timeline">
                     ${eng.professionalExperience.map(exp => `
@@ -192,16 +192,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     main.innerHTML += `
-    <section class="section modelling" id="modelling">
+    <section class="section creative" id="creative">
         <div class="container">
             <h2 class="section__title reveal">${esc(cr.sectionTitle)}</h2>
             <p class="section__subtitle reveal">${esc(cr.sectionSubtitle)}</p>
 
-            <div class="modelling__intro reveal">
+            <div class="creative__intro reveal">
                 <p>${esc(cr.intro)}</p>
             </div>
 
-            <div class="modelling__skills reveal">
+            <div class="creative__skills reveal">
                 <ul class="talent-skills-list">
                     ${cr.talentSkills.map(s => `<li>${esc(s)}</li>`).join('')}
                 </ul>

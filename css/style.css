@@ -341,11 +341,11 @@ ul {
     padding: var(--space-section) 0;
 }
 
-.engineering {
+.professional {
     background-color: var(--color-white);
 }
 
-.modelling {
+.creative {
     background-color: var(--color-off-white);
 }
 
@@ -392,7 +392,7 @@ ul {
 /* === ENGINEERING SECTION === */
 
 /* Education Cards */
-.engineering__education {
+.professional__education {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--space-md);
@@ -559,13 +559,13 @@ ul {
 
 /* === MODELLING SECTION === */
 
-.modelling__intro {
+.creative__intro {
     max-width: 700px;
     margin: 0 auto var(--space-md);
     text-align: center;
 }
 
-.modelling__intro p {
+.creative__intro p {
     font-size: var(--fs-body);
     color: var(--color-dark-light);
     line-height: 1.8;
@@ -914,13 +914,13 @@ ul {
 }
 
 /* Experience section titles get gold underline */
-.engineering__experience .subsection-title,
+.professional__experience .subsection-title,
 .experience-pt .section__subtitle {
     position: relative;
     padding-bottom: var(--space-md);
 }
 
-.engineering__experience .subsection-title::after,
+.professional__experience .subsection-title::after,
 .experience-pt .section__subtitle::after {
     content: '';
     position: absolute;

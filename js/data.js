@@ -14,12 +14,12 @@ const PORTFOLIO_DATA = {
     "ctaButtons": [
       {
         "label": "View Professional",
-        "href": "#engineering",
+        "href": "#professional",
         "style": "primary"
       },
       {
         "label": "View Creative",
-        "href": "#modelling",
+        "href": "#creative",
         "style": "outline"
       },
       {
