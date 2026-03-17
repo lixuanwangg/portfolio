@@ -723,13 +723,15 @@ ul {
 
 /* Video Grid — smaller 9:16 cards */
 .video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
+    display: flex;
+    flex-wrap: wrap;
     gap: var(--space-md);
     justify-content: center;
 }
 
 .video-card {
+    width: 200px;
+    flex-shrink: 0;
     background: var(--color-white);
     border-radius: var(--radius);
     overflow: hidden;
@@ -1198,11 +1200,6 @@ ul {
         grid-template-columns: 1fr;
     }
 
-    /* Video grid mobile */
-    .video-grid {
-        grid-template-columns: repeat(auto-fill, 200px);
-        justify-content: center;
-    }
 
     /* Skills grid mobile */
     .skills-grid {
