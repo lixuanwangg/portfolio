@@ -169,7 +169,10 @@ const PORTFOLIO_DATA = {
             "images": [
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%202%20Swan%20Wedding%201.jpg",
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%202%20Swan%20Wedding%202.jpg",
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%202%20Swan%20Wedding%203.jpg",
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%202%20Swan%20Wedding%203.jpg",
+                "crop": "18 50;100"
+              },
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%202%20Swan%20Wedding%204.jpg",
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%202%20Swan%20Wedding%205.jpg"
             ],
@@ -262,10 +265,22 @@ const PORTFOLIO_DATA = {
             "title": "@pozclicks.port",
             "date": "January 2026",
             "images": [
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%203%20for%20Velan%201.jpg",
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%203%20for%20Velan%202.jpg",
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%203%20for%20Velan%203.jpg",
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%203%20for%20Velan%204.jpg"
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%203%20for%20Velan%201.jpg",
+                "crop": "100 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%203%20for%20Velan%202.jpg",
+                "crop": "100 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%203%20for%20Velan%203.jpg",
+                "crop": "100 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%203%20for%20Velan%204.jpg",
+                "crop": "100 50;100"
+              }
             ],
             "link": "https://www.instagram.com/pozclicks.port"
           },
@@ -371,7 +386,8 @@ const PORTFOLIO_DATA = {
             "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Nail%20Model%201%20for%20Tisha.jpg",
             "caption": "Nail tech: @akak_durianpermasjaya",
             "link": "https://www.instagram.com/akak_durianpermasjaya",
-            "date": "February 2026"
+            "date": "February 2026",
+            "crop": "40 50;100"
           }
         ]
       },
