@@ -681,6 +681,11 @@ ul {
     margin-bottom: var(--space-lg);
 }
 
+.creative-category.reveal {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
 .brand-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
