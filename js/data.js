@@ -146,7 +146,7 @@ const PORTFOLIO_DATA = {
   },
   "creative": {
     "sectionTitle": "Creative Portfolio",
-    "sectionSubtitle": "Model • Talent • Canvas • Content Creation",
+    "sectionSubtitle": "Model • Talent • Canvas • Content Creator",
     "intro": "In my senior year, I stepped out of my comfort zone to explore the world of modelling and talent work. What began as curiosity quickly became a passion — allowing me to express creativity, build confidence, and collaborate with amazing brands and teams.",
     "talentSkills": [
       "Dancing",
@@ -393,7 +393,7 @@ const PORTFOLIO_DATA = {
       },
       {
         "id": "content-creation",
-        "title": "Content Creation",
+        "title": "Content Creator",
         "type": "video-grid",
         "items": [
           {
