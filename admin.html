@@ -76,7 +76,7 @@
         .crop-overlay.active { display: flex; }
         .crop-modal { background: #fff; border-radius: 12px; padding: 1.5rem; max-width: 700px; width: 90%; max-height: 90vh; overflow-y: auto; }
         .crop-modal h3 { margin-bottom: 1rem; font-size: 1.1rem; }
-        .crop-viewport { position: relative; width: 200px; height: 280px; overflow: hidden; border: 2px solid #C9A96E; border-radius: 8px; margin: 0 auto 1rem; cursor: grab; background: #f0f0f0; }
+        .crop-viewport { position: relative; width: 200px; height: 356px; overflow: hidden; border: 2px solid #C9A96E; border-radius: 8px; margin: 0 auto 1rem; cursor: grab; background: #f0f0f0; }
         .crop-viewport.dragging { cursor: grabbing; }
         .crop-viewport img { position: absolute; top: 0; left: 0; user-select: none; -webkit-user-drag: none; }
         .crop-controls { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
@@ -919,7 +919,7 @@ function openCropModal(src, currentCrop, onSave) {
         cropState.naturalH = cropImage.naturalHeight;
 
         // Calculate base scale so image covers the 200x280 viewport at zoom=100
-        const vpW = 200, vpH = 280;
+        const vpW = 200, vpH = 356;
         cropState.baseScale = Math.max(vpW / cropState.naturalW, vpH / cropState.naturalH);
 
         // Parse existing crop or default to center
@@ -959,7 +959,7 @@ function applyCropZoom() {
 }
 
 function clampPosition() {
-    const vpW = 200, vpH = 280;
+    const vpW = 200, vpH = 356;
     const imgW = cropImage.offsetWidth;
     const imgH = cropImage.offsetHeight;
     // If image smaller than viewport, center it; otherwise clamp
@@ -972,7 +972,7 @@ function clampPosition() {
 }
 
 function getCropValue() {
-    const vpW = 200, vpH = 280;
+    const vpW = 200, vpH = 356;
     const imgW = cropImage.offsetWidth;
     const imgH = cropImage.offsetHeight;
     const posX = imgW <= vpW ? 50 : Math.round((-cropState.imgX) / (imgW - vpW) * 100);
@@ -1028,7 +1028,7 @@ document.addEventListener('touchend', () => { cropState.dragging = false; });
 document.getElementById('cropReset').addEventListener('click', () => {
     cropZoom.value = 100;
     applyCropZoom();
-    const vpW = 200, vpH = 280;
+    const vpW = 200, vpH = 356;
     const imgW = cropImage.offsetWidth, imgH = cropImage.offsetHeight;
     cropState.imgX = imgW <= vpW ? (vpW - imgW) / 2 : -(imgW - vpW) / 2;
     cropState.imgY = imgH <= vpH ? (vpH - imgH) / 2 : -(imgH - vpH) / 2;
