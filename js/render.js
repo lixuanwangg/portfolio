@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${g.images.map(img => {
                             const src = typeof img === 'string' ? img : img.src;
                             const crop = typeof img === 'object' ? img.crop : null;
-                            return `<img data-src="${esc(src)}" alt="${esc(g.title)}" style="${cropStyle(crop)}" decoding="async">`;
+                            return `<img src="${esc(src)}" alt="${esc(g.title)}" style="${cropStyle(crop)}" decoding="async" crossorigin="anonymous">`;
                         }).join('')}
                     </div>
                 </div>`).join('');
@@ -278,20 +278,6 @@ document.addEventListener('DOMContentLoaded', () => {
     /* === DOCUMENT TITLE === */
     document.title = data.meta.title;
     document.querySelector('meta[name="description"]').setAttribute('content', data.meta.description);
-
-    /* === LAZY LOAD IMAGES (iOS Safari compatible) === */
-    const lazyImages = document.querySelectorAll('img[data-src]');
-    const imgObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                imgObserver.unobserve(img);
-            }
-        });
-    }, { rootMargin: '200px' });
-    lazyImages.forEach(img => imgObserver.observe(img));
 
     /* === SIGNAL READY === */
     document.dispatchEvent(new Event('contentRendered'));
