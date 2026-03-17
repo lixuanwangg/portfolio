@@ -377,13 +377,7 @@ ul {
     font-size: var(--fs-small);
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin-bottom: var(--space-xs);
-    position: relative;
-    padding-bottom: var(--space-md);
-}
-
-.section__subtitle::after {
-    content: none;
+    margin-bottom: var(--space-md);
 }
 
 .subsection-title {
@@ -393,6 +387,19 @@ ul {
     text-align: center;
     margin: var(--space-lg) 0 var(--space-md);
     color: var(--color-dark);
+    position: relative;
+    padding-bottom: var(--space-md);
+}
+
+.subsection-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: var(--color-gold);
 }
 
 /* === ENGINEERING SECTION === */
@@ -730,7 +737,7 @@ ul {
 /* Video Grid — smaller 9:16 cards */
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 200px));
+    grid-template-columns: repeat(auto-fill, minmax(120px, 160px));
     gap: var(--space-sm);
     justify-content: center;
 }
@@ -814,7 +821,7 @@ ul {
 
 .photo-carousel {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 240px));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 200px));
     gap: var(--space-sm);
     justify-content: center;
 }
@@ -964,6 +971,18 @@ ul {
     font-size: var(--fs-small);
     color: var(--color-warm-grey);
     line-height: 1.6;
+}
+
+.timeline__list {
+    list-style: disc;
+    padding-left: 1.2rem;
+    font-size: var(--fs-small);
+    color: var(--color-dark-light);
+    line-height: 1.8;
+}
+
+.timeline__list li {
+    margin-bottom: 0.3rem;
 }
 
 /* === CONTACT SECTION === */
