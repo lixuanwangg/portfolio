@@ -724,8 +724,8 @@ ul {
 /* Video Grid — smaller 9:16 cards */
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 120px);
-    gap: var(--space-sm);
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: var(--space-md);
     justify-content: center;
 }
 
@@ -808,10 +808,16 @@ ul {
 }
 
 .photo-carousel {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
+    display: flex;
+    flex-wrap: wrap;
     gap: var(--space-sm);
     justify-content: center;
+}
+
+.photo-carousel > img,
+.photo-carousel > .canvas-card {
+    width: 200px;
+    flex-shrink: 0;
 }
 
 .photo-carousel img {
@@ -1181,7 +1187,7 @@ ul {
 
     /* Video grid mobile */
     .video-grid {
-        grid-template-columns: repeat(auto-fill, 120px);
+        grid-template-columns: repeat(auto-fill, 200px);
         justify-content: center;
     }
 
