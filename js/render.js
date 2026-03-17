@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${g.images.map(img => {
                             const src = typeof img === 'string' ? img : img.src;
                             const crop = typeof img === 'object' ? img.crop : null;
-                            return `<img src="${esc(src)}" alt="${esc(g.title)}" style="${cropStyle(crop)}" loading="lazy" decoding="async">`;
+                            return `<div class="photo-frame"><img src="${esc(src)}" alt="${esc(g.title)}" style="${cropStyle(crop)}" loading="lazy" decoding="async"></div>`;
                         }).join('')}
                     </div>
                 </div>`).join('');
