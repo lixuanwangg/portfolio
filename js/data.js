@@ -356,10 +356,10 @@ const PORTFOLIO_DATA = {
         "type": "video-grid",
         "items": [
           {
-            "youtubeId": "8lrhWE8mQH0",
-            "caption": "Stikbrand.my",
-            "link": "",
-            "date": "February 2026"
+            "youtubeId": "ZNeXwTr9Tw0",
+            "caption": "Glad2Glow",
+            "link": "https://instagram.com/glad2glow.my",
+            "date": "March 2026"
           },
           {
             "youtubeId": "JDZKmlJk1JU",
@@ -368,10 +368,10 @@ const PORTFOLIO_DATA = {
             "date": "February 2026"
           },
           {
-            "youtubeId": "ZNeXwTr9Tw0",
-            "caption": "Glad2Glow",
-            "link": "https://instagram.com/glad2glow.my",
-            "date": "March 2026"
+            "youtubeId": "8lrhWE8mQH0",
+            "caption": "Stikbrand.my",
+            "link": "",
+            "date": "February 2026"
           }
         ]
       }
