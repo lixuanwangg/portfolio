@@ -826,15 +826,20 @@ ul {
     height: 356px;
     flex-shrink: 0;
     border-radius: var(--radius);
+    overflow: hidden;
     box-shadow: var(--shadow-soft);
     transition: box-shadow var(--transition-base);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .photo-frame:hover {
     box-shadow: var(--shadow-card);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .photo-carousel > .canvas-card {

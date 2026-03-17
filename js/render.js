@@ -159,8 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${g.images.map(img => {
                             const src = typeof img === 'string' ? img : img.src;
                             const crop = typeof img === 'object' ? img.crop : null;
-                            const posStyle = crop ? cropStyle(crop).replace('object-position', 'background-position') : '';
-                            return `<div class="photo-frame" role="img" aria-label="${esc(g.title)}" style="background-image:url('${esc(src)}');${posStyle}"></div>`;
+                            return `<div class="photo-frame"><img src="${esc(src)}" alt="${esc(g.title)}" style="${cropStyle(crop)}" loading="lazy" decoding="async"></div>`;
                         }).join('')}
                     </div>
                 </div>`).join('');
