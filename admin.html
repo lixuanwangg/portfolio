@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Admin Panel</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f7; color: #1d1d1f; }
+
+        /* Layout */
+        .admin { display: flex; min-height: 100vh; }
+        .sidebar { width: 260px; background: #1d1d1f; color: #f5f5f7; padding: 1.5rem 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; }
+        .sidebar h1 { font-size: 1rem; padding: 0 1.5rem 1.5rem; border-bottom: 1px solid #333; letter-spacing: 1px; text-transform: uppercase; }
+        .sidebar-nav { padding: 1rem 0; }
+        .sidebar-nav button { display: block; width: 100%; text-align: left; padding: 0.6rem 1.5rem; background: none; border: none; color: #aaa; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
+        .sidebar-nav button:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .sidebar-nav button.active { color: #fff; background: rgba(255,255,255,0.1); border-left: 3px solid #C9A96E; }
+        .sidebar-actions { padding: 1rem 1.5rem; border-top: 1px solid #333; margin-top: auto; position: absolute; bottom: 0; left: 0; right: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+
+        .main { margin-left: 260px; flex: 1; padding: 2rem 3rem; }
+        .main h2 { font-size: 1.5rem; margin-bottom: 1.5rem; color: #1d1d1f; }
+
+        /* Buttons */
+        .btn { padding: 0.6rem 1.2rem; border: none; border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; font-weight: 500; }
+        .btn-primary { background: #C9A96E; color: #fff; }
+        .btn-primary:hover { background: #B8954F; }
+        .btn-danger { background: #ff3b30; color: #fff; }
+        .btn-danger:hover { background: #d32f2f; }
+        .btn-outline { background: #fff; color: #1d1d1f; border: 1px solid #d2d2d7; }
+        .btn-outline:hover { background: #f5f5f7; }
+        .btn-sm { padding: 0.35rem 0.7rem; font-size: 0.75rem; }
+        .btn-full { width: 100%; }
+
+        /* Form elements */
+        .field { margin-bottom: 1rem; }
+        .field label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #86868b; margin-bottom: 0.3rem; font-weight: 600; }
+        .field input, .field textarea, .field select { width: 100%; padding: 0.6rem 0.8rem; border: 1px solid #d2d2d7; border-radius: 6px; font-size: 0.9rem; font-family: inherit; background: #fff; transition: border-color 0.2s; }
+        .field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: #C9A96E; box-shadow: 0 0 0 3px rgba(201,169,110,0.15); }
+        .field textarea { resize: vertical; min-height: 80px; }
+
+        /* Cards */
+        .card { background: #fff; border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border: 1px solid #e5e5e7; }
+        .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+        .card-header h3 { font-size: 0.95rem; font-weight: 600; }
+        .card-actions { display: flex; gap: 0.3rem; }
+
+        /* Image preview */
+        .img-preview { width: 80px; height: 80px; object-fit: cover; border-radius: 4px; border: 1px solid #e5e5e7; display: block; }
+        .yt-preview { width: 80px; height: 45px; object-fit: cover; border-radius: 4px; margin-top: 0.3rem; }
+
+        /* Image list */
+        .image-list { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 0.5rem 0; }
+        .image-item { position: relative; display: flex; flex-direction: column; align-items: center; gap: 0.25rem; }
+        .image-item .remove-img { position: absolute; top: -6px; right: -6px; width: 20px; height: 20px; border-radius: 50%; background: #ff3b30; color: #fff; border: none; font-size: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; line-height: 1; z-index: 2; }
+
+        /* Tags */
+        .tags-container { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.3rem; }
+        .tag-chip { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.2rem 0.6rem; background: #f0ebe3; color: #B8954F; border-radius: 20px; font-size: 0.75rem; }
+        .tag-chip button { background: none; border: none; color: #B8954F; cursor: pointer; font-size: 0.85rem; line-height: 1; }
+
+        /* Section panel visibility */
+        .panel { display: none; }
+        .panel.active { display: block; }
+
+        /* Nested group */
+        .group-card { background: #fafafa; border: 1px solid #e5e5e7; border-radius: 8px; padding: 1rem; margin-bottom: 0.75rem; }
+        .group-card h4 { font-size: 0.85rem; margin-bottom: 0.5rem; color: #86868b; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* Toast notification */
+        .toast { position: fixed; bottom: 2rem; right: 2rem; background: #1d1d1f; color: #fff; padding: 0.8rem 1.5rem; border-radius: 8px; font-size: 0.9rem; opacity: 0; transition: opacity 0.3s; z-index: 999; }
+        .toast.show { opacity: 1; }
+
+        /* Crop Modal */
+        .crop-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 1000; display: none; align-items: center; justify-content: center; }
+        .crop-overlay.active { display: flex; }
+        .crop-modal { background: #fff; border-radius: 12px; padding: 1.5rem; max-width: 700px; width: 90%; max-height: 90vh; overflow-y: auto; }
+        .crop-modal h3 { margin-bottom: 1rem; font-size: 1.1rem; }
+        .crop-viewport { position: relative; width: 200px; height: 280px; overflow: hidden; border: 2px solid #C9A96E; border-radius: 8px; margin: 0 auto 1rem; cursor: grab; background: #f0f0f0; }
+        .crop-viewport.dragging { cursor: grabbing; }
+        .crop-viewport img { position: absolute; top: 0; left: 0; user-select: none; -webkit-user-drag: none; }
+        .crop-controls { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+        .crop-controls label { font-size: 0.8rem; color: #86868b; text-transform: uppercase; letter-spacing: 0.5px; }
+        .crop-controls input[type="range"] { width: 250px; }
+        .crop-actions { display: flex; gap: 0.5rem; justify-content: center; }
+        .crop-btn { position: absolute; top: -6px; left: -6px; width: 20px; height: 20px; border-radius: 50%; background: #C9A96E; color: #fff; border: none; font-size: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 1; }
+        .crop-btn:hover { background: #B8954F; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar { width: 100%; position: relative; }
+            .main { margin-left: 0; padding: 1rem; }
+            .admin { flex-direction: column; }
+            .sidebar-actions { position: relative; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="admin">
+    <aside class="sidebar">
+        <h1>Admin Panel</h1>
+        <nav class="sidebar-nav" id="sidebarNav">
+            <button data-panel="hero" class="active">Hero</button>
+            <button data-panel="education">Education</button>
+            <button data-panel="skills">Technical Skills</button>
+            <button data-panel="languages">Languages</button>
+            <button data-panel="projects">Projects</button>
+            <button data-panel="profExp">Professional Exp.</button>
+            <button data-panel="creativeIntro">Creative Intro</button>
+            <button data-panel="talentSkills">Talent Skills</button>
+            <button data-panel="creativeCategories">Creative Sections</button>
+            <button data-panel="partTime">Part-Time Exp.</button>
+            <button data-panel="contact">Contact</button>
+            <button data-panel="meta">Site Settings</button>
+        </nav>
+        <div class="sidebar-actions">
+            <button class="btn btn-outline btn-full" onclick="loadJSON()">Load JSON File</button>
+            <button class="btn btn-primary btn-full" onclick="saveJSON()">Save / Download JSON</button>
+            <button class="btn btn-outline btn-full" onclick="previewSite()">Preview Site</button>
+        </div>
+    </aside>
+
+    <div class="main" id="mainEditor">
+        <!-- Hero -->
+        <div class="panel active" id="panel-hero">
+            <h2>Hero Section</h2>
+            <div class="field"><label>Eyebrow text</label><input id="hero-eyebrow"></div>
+            <div class="field"><label>Full Name</label><input id="hero-name"></div>
+            <div class="field"><label>Nickname</label><input id="hero-nickname"></div>
+            <div class="field"><label>Subtitle</label><input id="hero-subtitle"></div>
+            <div class="field"><label>Intro paragraph</label><textarea id="hero-intro" rows="4"></textarea></div>
+        </div>
+
+        <!-- Education -->
+        <div class="panel" id="panel-education">
+            <h2>Education</h2>
+            <div id="education-list"></div>
+            <button class="btn btn-outline" onclick="addEducation()">+ Add Education</button>
+        </div>
+
+        <!-- Skills -->
+        <div class="panel" id="panel-skills">
+            <h2>Technical Skills</h2>
+            <div id="skills-list"></div>
+            <button class="btn btn-outline" onclick="addSkill()">+ Add Skill</button>
+        </div>
+
+        <!-- Languages -->
+        <div class="panel" id="panel-languages">
+            <h2>Languages</h2>
+            <div id="languages-list"></div>
+            <button class="btn btn-outline" onclick="addLanguage()">+ Add Language</button>
+        </div>
+
+        <!-- Projects -->
+        <div class="panel" id="panel-projects">
+            <h2>Projects</h2>
+            <div id="projects-list"></div>
+            <button class="btn btn-outline" onclick="addProject()">+ Add Project</button>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="panel" id="panel-profExp">
+            <h2>Professional Experience</h2>
+            <div id="profExp-list"></div>
+            <button class="btn btn-outline" onclick="addProfExp()">+ Add Experience</button>
+        </div>
+
+        <!-- Creative Intro -->
+        <div class="panel" id="panel-creativeIntro">
+            <h2>Creative Section Intro</h2>
+            <div class="field"><label>Section Title</label><input id="creative-title"></div>
+            <div class="field"><label>Section Subtitle</label><input id="creative-subtitle"></div>
+            <div class="field"><label>Intro Paragraph</label><textarea id="creative-intro" rows="4"></textarea></div>
+        </div>
+
+        <!-- Talent Skills -->
+        <div class="panel" id="panel-talentSkills">
+            <h2>Talent Skills</h2>
+            <div id="talentSkills-list"></div>
+            <button class="btn btn-outline" onclick="addTalentSkill()">+ Add Skill</button>
+        </div>
+
+        <!-- Creative Categories -->
+        <div class="panel" id="panel-creativeCategories">
+            <h2>Creative Sections</h2>
+            <p style="color:#86868b; font-size:0.85rem; margin-bottom:1rem;">Each section can be a Photo Carousel, Video Grid, or Canvas Grid. Add groups/items within each.</p>
+            <div id="categories-list"></div>
+            <button class="btn btn-outline" onclick="addCategory()">+ Add Section</button>
+        </div>
+
+        <!-- Part-Time -->
+        <div class="panel" id="panel-partTime">
+            <h2>Part-Time Experience</h2>
+            <div id="partTime-list"></div>
+            <button class="btn btn-outline" onclick="addPartTime()">+ Add Experience</button>
+        </div>
+
+        <!-- Contact -->
+        <div class="panel" id="panel-contact">
+            <h2>Contact Info</h2>
+            <div class="field"><label>Section Title</label><input id="contact-title"></div>
+            <div class="field"><label>Section Subtitle</label><input id="contact-subtitle"></div>
+            <div class="field"><label>Email (for form)</label><input id="contact-email"></div>
+            <div id="contact-list"></div>
+            <button class="btn btn-outline" onclick="addContactItem()">+ Add Contact Method</button>
+        </div>
+
+        <!-- Meta -->
+        <div class="panel" id="panel-meta">
+            <h2>Site Settings</h2>
+            <div class="field"><label>Page Title</label><input id="meta-title"></div>
+            <div class="field"><label>Meta Description</label><textarea id="meta-desc" rows="3"></textarea></div>
+            <div class="field"><label>Footer Text</label><input id="meta-footer"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Crop Modal -->
+<div class="crop-overlay" id="cropOverlay">
+    <div class="crop-modal">
+        <h3>Adjust Image Crop</h3>
+        <p style="color:#86868b; font-size:0.85rem; margin-bottom:1rem; text-align:center;">Drag the image to position it within the frame. Use the slider to zoom.</p>
+        <div class="crop-viewport" id="cropViewport">
+            <img id="cropImage" src="" alt="Crop preview">
+        </div>
+        <div class="crop-controls">
+            <label>Zoom</label>
+            <input type="range" id="cropZoom" min="100" max="300" value="100" step="5">
+            <button class="btn btn-outline btn-sm" id="cropReset">Reset to Center</button>
+        </div>
+        <div class="crop-actions">
+            <button class="btn btn-outline" id="cropCancel">Cancel</button>
+            <button class="btn btn-primary" id="cropSave">Save Crop</button>
+        </div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<input type="file" id="fileInput" accept=".js,.json" style="display:none">
+
+<script src="js/data.js"></script>
+<script>
+/* ============================================================
+   ADMIN PANEL LOGIC
+   ============================================================ */
+
+let data = {};
+
+// ----- INIT -----
+function init() {
+    if (typeof PORTFOLIO_DATA !== 'undefined') {
+        data = JSON.parse(JSON.stringify(PORTFOLIO_DATA));
+    } else {
+        data = getEmptyData();
+    }
+    populateAll();
+}
+
+function getEmptyData() {
+    return {
+        meta: { title: '', description: '', footerText: '' },
+        hero: { eyebrow: '', name: '', nickname: '', subtitle: '', intro: '', ctaButtons: [
+            { label: 'View Professional', href: '#engineering', style: 'primary' },
+            { label: 'View Creative', href: '#modelling', style: 'outline' },
+            { label: 'Contact Me', href: '#contact', style: 'outline' }
+        ]},
+        engineering: { sectionTitle: '', sectionSubtitle: '', education: [], skills: [], languages: [], projects: [], professionalExperience: [] },
+        creative: { sectionTitle: '', sectionSubtitle: '', intro: '', talentSkills: [], categories: [] },
+        partTimeExperience: { sectionTitle: '', sectionSubtitle: '', items: [] },
+        contact: { sectionTitle: '', sectionSubtitle: '', email: '', items: [] }
+    };
+}
+
+// ----- SIDEBAR NAV -----
+document.getElementById('sidebarNav').addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-panel]');
+    if (!btn) return;
+    collectAll();
+    document.querySelectorAll('.sidebar-nav button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-' + btn.dataset.panel).classList.add('active');
+});
+
+// ----- POPULATE ALL -----
+function populateAll() {
+    // Hero
+    document.getElementById('hero-eyebrow').value = data.hero.eyebrow || '';
+    document.getElementById('hero-name').value = data.hero.name || '';
+    document.getElementById('hero-nickname').value = data.hero.nickname || '';
+    document.getElementById('hero-subtitle').value = data.hero.subtitle || '';
+    document.getElementById('hero-intro').value = data.hero.intro || '';
+
+    // Meta
+    document.getElementById('meta-title').value = data.meta.title || '';
+    document.getElementById('meta-desc').value = data.meta.description || '';
+    document.getElementById('meta-footer').value = data.meta.footerText || '';
+
+    // Creative intro
+    document.getElementById('creative-title').value = data.creative.sectionTitle || '';
+    document.getElementById('creative-subtitle').value = data.creative.sectionSubtitle || '';
+    document.getElementById('creative-intro').value = data.creative.intro || '';
+
+    // Contact
+    document.getElementById('contact-title').value = data.contact.sectionTitle || '';
+    document.getElementById('contact-subtitle').value = data.contact.sectionSubtitle || '';
+    document.getElementById('contact-email').value = data.contact.email || '';
+
+    renderEducation();
+    renderSkills();
+    renderLanguages();
+    renderProjects();
+    renderProfExp();
+    renderTalentSkills();
+    renderCategories();
+    renderPartTime();
+    renderContactItems();
+}
+
+// ----- COLLECT ALL (read form back into data) -----
+function collectAll() {
+    data.hero.eyebrow = document.getElementById('hero-eyebrow').value;
+    data.hero.name = document.getElementById('hero-name').value;
+    data.hero.nickname = document.getElementById('hero-nickname').value;
+    data.hero.subtitle = document.getElementById('hero-subtitle').value;
+    data.hero.intro = document.getElementById('hero-intro').value;
+
+    data.meta.title = document.getElementById('meta-title').value;
+    data.meta.description = document.getElementById('meta-desc').value;
+    data.meta.footerText = document.getElementById('meta-footer').value;
+
+    data.creative.sectionTitle = document.getElementById('creative-title').value;
+    data.creative.sectionSubtitle = document.getElementById('creative-subtitle').value;
+    data.creative.intro = document.getElementById('creative-intro').value;
+
+    data.contact.sectionTitle = document.getElementById('contact-title').value;
+    data.contact.sectionSubtitle = document.getElementById('contact-subtitle').value;
+    data.contact.email = document.getElementById('contact-email').value;
+
+    collectListItems('education', data.engineering.education, ['degree','school','year','details']);
+    collectListItems('skills', data.engineering.skills, ['icon','name','desc']);
+    collectListItems('languages', data.engineering.languages, ['name','level']);
+    collectProjects();
+    collectProfExp();
+    collectTalentSkills();
+    collectCategories();
+    collectListItems('partTime', data.partTimeExperience.items, ['date','role','company','desc']);
+    collectContactItems();
+}
+
+function collectListItems(prefix, arr, fields) {
+    const container = document.getElementById(prefix + '-list');
+    const cards = container.querySelectorAll('.card');
+    arr.length = 0;
+    cards.forEach(card => {
+        const obj = {};
+        fields.forEach(f => {
+            const el = card.querySelector(`[data-field="${f}"]`);
+            obj[f] = el ? el.value : '';
+        });
+        arr.push(obj);
+    });
+}
+
+// ----- GENERIC CARD RENDERING -----
+function makeCardActions(prefix, index, total) {
+    return `<div class="card-actions">
+        <button class="btn btn-outline btn-sm" onclick="moveItem('${prefix}', ${index}, -1)" ${index === 0 ? 'disabled' : ''} title="Move up">\u2191</button>
+        <button class="btn btn-outline btn-sm" onclick="moveItem('${prefix}', ${index}, 1)" ${index === total - 1 ? 'disabled' : ''} title="Move down">\u2193</button>
+        <button class="btn btn-danger btn-sm" onclick="removeItem('${prefix}', ${index})" title="Delete">\u00d7</button>
+    </div>`;
+}
+
+// ----- EDUCATION -----
+function renderEducation() {
+    const list = document.getElementById('education-list');
+    list.innerHTML = data.engineering.education.map((e, i) => `
+        <div class="card">
+            <div class="card-header"><h3>${e.degree || 'New Education'}</h3>${makeCardActions('education', i, data.engineering.education.length)}</div>
+            <div class="field"><label>Degree</label><input data-field="degree" value="${esc(e.degree)}"></div>
+            <div class="field"><label>School</label><input data-field="school" value="${esc(e.school)}"></div>
+            <div class="field"><label>Year</label><input data-field="year" value="${esc(e.year)}"></div>
+            <div class="field"><label>Details</label><input data-field="details" value="${esc(e.details)}"></div>
+        </div>`).join('');
+}
+function addEducation() { collectAll(); data.engineering.education.push({ degree:'', school:'', year:'', details:'' }); renderEducation(); }
+
+// ----- SKILLS -----
+function renderSkills() {
+    const list = document.getElementById('skills-list');
+    list.innerHTML = data.engineering.skills.map((s, i) => `
+        <div class="card">
+            <div class="card-header"><h3>${s.name || 'New Skill'}</h3>${makeCardActions('skills', i, data.engineering.skills.length)}</div>
+            <div class="field"><label>Icon (emoji/symbol)</label><input data-field="icon" value="${esc(s.icon)}"></div>
+            <div class="field"><label>Name</label><input data-field="name" value="${esc(s.name)}"></div>
+            <div class="field"><label>Description</label><input data-field="desc" value="${esc(s.desc)}"></div>
+        </div>`).join('');
+}
+function addSkill() { collectAll(); data.engineering.skills.push({ icon:'', name:'', desc:'' }); renderSkills(); }
+
+// ----- LANGUAGES -----
+function renderLanguages() {
+    const list = document.getElementById('languages-list');
+    list.innerHTML = data.engineering.languages.map((l, i) => `
+        <div class="card">
+            <div class="card-header"><h3>${l.name || 'New Language'}</h3>${makeCardActions('languages', i, data.engineering.languages.length)}</div>
+            <div class="field"><label>Language</label><input data-field="name" value="${esc(l.name)}"></div>
+            <div class="field"><label>Level</label><input data-field="level" value="${esc(l.level)}"></div>
+        </div>`).join('');
+}
+function addLanguage() { collectAll(); data.engineering.languages.push({ name:'', level:'' }); renderLanguages(); }
+
+// ----- PROJECTS -----
+function renderProjects() {
+    const list = document.getElementById('projects-list');
+    list.innerHTML = data.engineering.projects.map((p, i) => `
+        <div class="card" data-index="${i}">
+            <div class="card-header"><h3>${p.title || 'New Project'}</h3>${makeCardActions('projects', i, data.engineering.projects.length)}</div>
+            <div class="field"><label>Title</label><input data-field="title" value="${esc(p.title)}"></div>
+            <div class="field"><label>Description</label><textarea data-field="desc" rows="2">${esc(p.desc)}</textarea></div>
+            <div class="field">
+                <label>Tags</label>
+                <div class="tags-container" data-tags='${JSON.stringify(p.tags)}'>
+                    ${p.tags.map(t => `<span class="tag-chip">${esc(t)} <button onclick="removeTag(this)">\u00d7</button></span>`).join('')}
+                </div>
+                <input placeholder="Type tag and press Enter" onkeydown="addTag(event, this)" style="margin-top:0.3rem">
+            </div>
+        </div>`).join('');
+}
+function collectProjects() {
+    const cards = document.querySelectorAll('#projects-list .card');
+    data.engineering.projects = [];
+    cards.forEach(card => {
+        const tags = JSON.parse(card.querySelector('.tags-container').dataset.tags);
+        data.engineering.projects.push({
+            title: card.querySelector('[data-field="title"]').value,
+            desc: card.querySelector('[data-field="desc"]').value,
+            tags: tags
+        });
+    });
+}
+function addProject() { collectAll(); data.engineering.projects.push({ title:'', desc:'', tags:[] }); renderProjects(); }
+
+function addTag(e, input) {
+    if (e.key !== 'Enter' || !input.value.trim()) return;
+    e.preventDefault();
+    const container = input.previousElementSibling;
+    const tags = JSON.parse(container.dataset.tags);
+    tags.push(input.value.trim());
+    container.dataset.tags = JSON.stringify(tags);
+    const chip = document.createElement('span');
+    chip.className = 'tag-chip';
+    chip.innerHTML = esc(input.value.trim()) + ' <button onclick="removeTag(this)">\u00d7</button>';
+    container.appendChild(chip);
+    input.value = '';
+}
+function removeTag(btn) {
+    const chip = btn.parentElement;
+    const container = chip.parentElement;
+    const tags = JSON.parse(container.dataset.tags);
+    const idx = Array.from(container.querySelectorAll('.tag-chip')).indexOf(chip);
+    tags.splice(idx, 1);
+    container.dataset.tags = JSON.stringify(tags);
+    chip.remove();
+}
+
+// ----- PROFESSIONAL EXPERIENCE -----
+function renderProfExp() {
+    const list = document.getElementById('profExp-list');
+    list.innerHTML = data.engineering.professionalExperience.map((exp, i) => `
+        <div class="card" data-index="${i}">
+            <div class="card-header"><h3>${exp.role || 'New Experience'}</h3>${makeCardActions('profExp', i, data.engineering.professionalExperience.length)}</div>
+            <div class="field"><label>Date</label><input data-field="date" value="${esc(exp.date)}"></div>
+            <div class="field"><label>Role</label><input data-field="role" value="${esc(exp.role)}"></div>
+            <div class="field"><label>Company</label><input data-field="company" value="${esc(exp.company)}"></div>
+            <div class="field"><label>Bullet Points (one per line)</label><textarea data-field="bullets" rows="5">${(exp.bullets||[]).join('\n')}</textarea></div>
+        </div>`).join('');
+}
+function collectProfExp() {
+    const cards = document.querySelectorAll('#profExp-list .card');
+    data.engineering.professionalExperience = [];
+    cards.forEach(card => {
+        data.engineering.professionalExperience.push({
+            date: card.querySelector('[data-field="date"]').value,
+            role: card.querySelector('[data-field="role"]').value,
+            company: card.querySelector('[data-field="company"]').value,
+            bullets: card.querySelector('[data-field="bullets"]').value.split('\n').filter(b => b.trim())
+        });
+    });
+}
+function addProfExp() { collectAll(); data.engineering.professionalExperience.push({ date:'', role:'', company:'', bullets:[] }); renderProfExp(); }
+
+// ----- TALENT SKILLS -----
+function renderTalentSkills() {
+    const list = document.getElementById('talentSkills-list');
+    list.innerHTML = data.creative.talentSkills.map((s, i) => `
+        <div class="card" style="padding:0.6rem 1rem; display:flex; align-items:center; justify-content:space-between;">
+            <input value="${esc(s)}" data-field="skill" style="border:none; flex:1; font-size:0.9rem;">
+            <div class="card-actions">
+                <button class="btn btn-outline btn-sm" onclick="moveTalentSkill(${i}, -1)" ${i===0?'disabled':''} title="Move up">\u2191</button>
+                <button class="btn btn-outline btn-sm" onclick="moveTalentSkill(${i}, 1)" ${i===data.creative.talentSkills.length-1?'disabled':''} title="Move down">\u2193</button>
+                <button class="btn btn-danger btn-sm" onclick="removeTalentSkill(${i})">\u00d7</button>
+            </div>
+        </div>`).join('');
+}
+function collectTalentSkills() {
+    const inputs = document.querySelectorAll('#talentSkills-list [data-field="skill"]');
+    data.creative.talentSkills = Array.from(inputs).map(i => i.value).filter(v => v.trim());
+}
+function addTalentSkill() { collectAll(); data.creative.talentSkills.push(''); renderTalentSkills(); }
+function moveTalentSkill(i, dir) { collectAll(); swap(data.creative.talentSkills, i, i+dir); renderTalentSkills(); }
+function removeTalentSkill(i) { collectAll(); data.creative.talentSkills.splice(i, 1); renderTalentSkills(); }
+
+// ----- CREATIVE CATEGORIES -----
+function renderImageItem(img, ci, gi, ii) {
+    var src = typeof img === 'string' ? img : img.src;
+    var hasCrop = typeof img === 'object' && img.crop;
+    var borderStyle = hasCrop ? ' style="border:2px solid #C9A96E"' : '';
+    return '<div class="image-item">'
+        + '<img src="' + esc(src) + '" class="img-preview"' + borderStyle + '>'
+        + '<button class="crop-btn" onclick="cropCarouselImage(' + ci + ',' + gi + ',' + ii + ')" title="Crop">&#9986;</button>'
+        + '<button class="remove-img" onclick="removeCatImage(' + ci + ',' + gi + ',' + ii + ')">&#215;</button>'
+        + '</div>';
+}
+
+function renderCanvasPreview(c, ci, vi) {
+    if (!c.src) return '';
+    var borderStyle = c.crop ? ' style="border:2px solid #C9A96E"' : '';
+    return '<div class="image-item" style="display:inline-block">'
+        + '<img src="' + esc(c.src) + '" class="img-preview"' + borderStyle + '>'
+        + '<button class="crop-btn" onclick="cropCanvasImage(' + ci + ',' + vi + ')" title="Crop">&#9986;</button>'
+        + '</div>';
+}
+
+function renderCategories() {
+    const list = document.getElementById('categories-list');
+    list.innerHTML = data.creative.categories.map((cat, ci) => {
+        let inner = '';
+        if (cat.type === 'photo-carousel') {
+            inner = (cat.groups || []).map((g, gi) => `
+                <div class="group-card">
+                    <div class="card-header">
+                        <h4>${esc(g.title) || 'New Group'}</h4>
+                        <div class="card-actions">
+                            <button class="btn btn-outline btn-sm" onclick="moveCatGroup(${ci}, ${gi}, -1)" ${gi===0?'disabled':''}>\u2191</button>
+                            <button class="btn btn-outline btn-sm" onclick="moveCatGroup(${ci}, ${gi}, 1)" ${gi===(cat.groups.length-1)?'disabled':''}>\u2193</button>
+                            <button class="btn btn-danger btn-sm" onclick="removeCatGroup(${ci}, ${gi})">\u00d7</button>
+                        </div>
+                    </div>
+                    <div class="field"><label>Title</label><input data-field="group-title" value="${esc(g.title)}"></div>
+                    <div class="field"><label>Link (optional)</label><input data-field="group-link" value="${esc(g.link || '')}" placeholder="e.g. https://instagram.com/username"></div>
+                    <div class="field"><label>Date</label><input data-field="group-date" value="${esc(g.date)}"></div>
+                    <div class="field">
+                        <label>Images</label>
+                        <div class="image-list" data-images='${JSON.stringify(g.images)}'>
+                            ${g.images.map((img, ii) => renderImageItem(img, ci, gi, ii)).join('')}
+                        </div>
+                        <input placeholder="Paste image URL and press Enter" onkeydown="addCatImage(event, this, ${ci}, ${gi})" style="margin-top:0.3rem">
+                    </div>
+                </div>`).join('');
+            inner += `<button class="btn btn-outline btn-sm" onclick="addCatGroup(${ci})" style="margin-top:0.5rem">+ Add Group</button>`;
+        } else if (cat.type === 'video-grid') {
+            inner = (cat.items || []).map((v, vi) => `
+                <div class="group-card">
+                    <div class="card-header">
+                        <h4>${esc(v.caption) || 'New Video'}</h4>
+                        <div class="card-actions">
+                            <button class="btn btn-outline btn-sm" onclick="moveCatItem(${ci}, ${vi}, -1)" ${vi===0?'disabled':''}>\u2191</button>
+                            <button class="btn btn-outline btn-sm" onclick="moveCatItem(${ci}, ${vi}, 1)" ${vi===(cat.items.length-1)?'disabled':''}>\u2193</button>
+                            <button class="btn btn-danger btn-sm" onclick="removeCatItem(${ci}, ${vi})">\u00d7</button>
+                        </div>
+                    </div>
+                    <div class="field"><label>YouTube ID</label><input data-field="youtubeId" value="${esc(v.youtubeId)}"></div>
+                    <div class="field"><label>Caption</label><input data-field="caption" value="${esc(v.caption)}"></div>
+                    <div class="field"><label>Link (optional)</label><input data-field="link" value="${esc(v.link || '')}" placeholder="e.g. https://instagram.com/username"></div>
+                    <div class="field"><label>Date</label><input data-field="date" value="${esc(v.date)}"></div>
+                    ${v.youtubeId ? `<img src="https://img.youtube.com/vi/${esc(v.youtubeId)}/hqdefault.jpg" class="yt-preview">` : ''}
+                </div>`).join('');
+            inner += `<button class="btn btn-outline btn-sm" onclick="addCatVideoItem(${ci})" style="margin-top:0.5rem">+ Add Video</button>`;
+        } else if (cat.type === 'canvas-grid') {
+            inner = (cat.items || []).map((c, vi) => `
+                <div class="group-card">
+                    <div class="card-header">
+                        <h4>${esc(c.caption) || 'New Canvas'}</h4>
+                        <div class="card-actions">
+                            <button class="btn btn-outline btn-sm" onclick="moveCatItem(${ci}, ${vi}, -1)" ${vi===0?'disabled':''}>\u2191</button>
+                            <button class="btn btn-outline btn-sm" onclick="moveCatItem(${ci}, ${vi}, 1)" ${vi===(cat.items.length-1)?'disabled':''}>\u2193</button>
+                            <button class="btn btn-danger btn-sm" onclick="removeCatItem(${ci}, ${vi})">\u00d7</button>
+                        </div>
+                    </div>
+                    <div class="field"><label>Image URL</label><input data-field="src" value="${esc(c.src)}"></div>
+                    <div class="field"><label>Caption</label><input data-field="caption" value="${esc(c.caption)}"></div>
+                    <div class="field"><label>Link (optional)</label><input data-field="link" value="${esc(c.link || '')}" placeholder="e.g. https://instagram.com/username"></div>
+                    <div class="field"><label>Date</label><input data-field="date" value="${esc(c.date)}"></div>
+                    ${renderCanvasPreview(c, ci, vi)}
+                </div>`).join('');
+            inner += `<button class="btn btn-outline btn-sm" onclick="addCatCanvasItem(${ci})" style="margin-top:0.5rem">+ Add Canvas</button>`;
+        }
+
+        return `<div class="card">
+            <div class="card-header">
+                <h3>${esc(cat.title) || 'New Section'}</h3>
+                ${makeCardActions('categories', ci, data.creative.categories.length)}
+            </div>
+            <div class="field"><label>Section Title</label><input data-field="cat-title" value="${esc(cat.title)}"></div>
+            <div class="field"><label>Type</label>
+                <select data-field="cat-type" onchange="changeCatType(${ci}, this.value)">
+                    <option value="photo-carousel" ${cat.type==='photo-carousel'?'selected':''}>Photo Carousel</option>
+                    <option value="video-grid" ${cat.type==='video-grid'?'selected':''}>Video Grid</option>
+                    <option value="canvas-grid" ${cat.type==='canvas-grid'?'selected':''}>Canvas Grid</option>
+                </select>
+            </div>
+            <div style="margin-top:0.75rem">${inner}</div>
+        </div>`;
+    }).join('');
+}
+
+function collectCategories() {
+    const catCards = document.querySelectorAll('#categories-list > .card');
+    const oldCategories = data.creative.categories;
+    data.creative.categories = [];
+    catCards.forEach((card, ci) => {
+        const title = card.querySelector('[data-field="cat-title"]').value;
+        const type = card.querySelector('[data-field="cat-type"]').value;
+        const cat = { id: title.toLowerCase().replace(/\s+/g, '-'), title, type };
+
+        if (type === 'photo-carousel') {
+            cat.groups = [];
+            card.querySelectorAll('.group-card').forEach(gc => {
+                const images = JSON.parse(gc.querySelector('.image-list').dataset.images);
+                var groupLink = gc.querySelector('[data-field="group-link"]').value;
+                var group = {
+                    title: gc.querySelector('[data-field="group-title"]').value,
+                    date: gc.querySelector('[data-field="group-date"]').value,
+                    images: images
+                };
+                if (groupLink) group.link = groupLink;
+                cat.groups.push(group);
+            });
+        } else {
+            // Preserve existing items (with crop data) and update form fields
+            const oldCat = oldCategories[ci];
+            cat.items = [];
+            card.querySelectorAll('.group-card').forEach((gc, vi) => {
+                const item = {};
+                gc.querySelectorAll('[data-field]').forEach(el => { item[el.dataset.field] = el.value; });
+                // Preserve crop data from existing items
+                if (oldCat && oldCat.items && oldCat.items[vi] && oldCat.items[vi].crop) {
+                    item.crop = oldCat.items[vi].crop;
+                }
+                cat.items.push(item);
+            });
+        }
+        data.creative.categories.push(cat);
+    });
+}
+
+function addCategory() { collectAll(); data.creative.categories.push({ id:'new', title:'', type:'photo-carousel', groups:[] }); renderCategories(); }
+function changeCatType(ci, newType) {
+    collectAll();
+    const cat = data.creative.categories[ci];
+    cat.type = newType;
+    if (newType === 'photo-carousel') { cat.groups = cat.groups || []; delete cat.items; }
+    else { cat.items = cat.items || []; delete cat.groups; }
+    renderCategories();
+}
+function addCatGroup(ci) { collectAll(); data.creative.categories[ci].groups.push({ title:'', date:'', images:[] }); renderCategories(); }
+function addCatVideoItem(ci) { collectAll(); data.creative.categories[ci].items.push({ youtubeId:'', caption:'', date:'' }); renderCategories(); }
+function addCatCanvasItem(ci) { collectAll(); data.creative.categories[ci].items.push({ src:'', caption:'', date:'' }); renderCategories(); }
+function removeCatGroup(ci, gi) { if (!confirm('Delete this group?')) return; collectAll(); data.creative.categories[ci].groups.splice(gi, 1); renderCategories(); }
+function removeCatItem(ci, vi) { if (!confirm('Delete this item?')) return; collectAll(); data.creative.categories[ci].items.splice(vi, 1); renderCategories(); }
+function moveCatGroup(ci, gi, dir) { collectAll(); swap(data.creative.categories[ci].groups, gi, gi+dir); renderCategories(); }
+function moveCatItem(ci, vi, dir) { collectAll(); swap(data.creative.categories[ci].items, vi, vi+dir); renderCategories(); }
+function addCatImage(e, input, ci, gi) {
+    if (e.key !== 'Enter' || !input.value.trim()) return;
+    e.preventDefault();
+    collectAll();
+    data.creative.categories[ci].groups[gi].images.push(input.value.trim());
+    renderCategories();
+}
+function removeCatImage(ci, gi, ii) { collectAll(); data.creative.categories[ci].groups[gi].images.splice(ii, 1); renderCategories(); }
+
+// ----- PART TIME -----
+function renderPartTime() {
+    const list = document.getElementById('partTime-list');
+    list.innerHTML = data.partTimeExperience.items.map((item, i) => `
+        <div class="card">
+            <div class="card-header"><h3>${item.role || 'New Experience'}</h3>${makeCardActions('partTime', i, data.partTimeExperience.items.length)}</div>
+            <div class="field"><label>Date</label><input data-field="date" value="${esc(item.date)}"></div>
+            <div class="field"><label>Role</label><input data-field="role" value="${esc(item.role)}"></div>
+            <div class="field"><label>Company</label><input data-field="company" value="${esc(item.company)}"></div>
+            <div class="field"><label>Description</label><textarea data-field="desc" rows="2">${esc(item.desc)}</textarea></div>
+        </div>`).join('');
+}
+function addPartTime() { collectAll(); data.partTimeExperience.items.push({ date:'', role:'', company:'', desc:'' }); renderPartTime(); }
+
+// ----- CONTACT ITEMS -----
+function renderContactItems() {
+    const list = document.getElementById('contact-list');
+    list.innerHTML = data.contact.items.map((c, i) => `
+        <div class="card">
+            <div class="card-header"><h3>${c.label || 'New Contact'}</h3>${makeCardActions('contactItems', i, data.contact.items.length)}</div>
+            <div class="field"><label>Label</label><input data-field="label" value="${esc(c.label)}"></div>
+            <div class="field"><label>Display Value</label><input data-field="value" value="${esc(c.value)}"></div>
+            <div class="field"><label>Link (href)</label><input data-field="href" value="${esc(c.href)}"></div>
+            <div class="field"><label>External link?</label><select data-field="external"><option value="false" ${!c.external?'selected':''}>No</option><option value="true" ${c.external?'selected':''}>Yes</option></select></div>
+        </div>`).join('');
+}
+function collectContactItems() {
+    const cards = document.querySelectorAll('#contact-list .card');
+    data.contact.items = [];
+    cards.forEach(card => {
+        data.contact.items.push({
+            label: card.querySelector('[data-field="label"]').value,
+            value: card.querySelector('[data-field="value"]').value,
+            href: card.querySelector('[data-field="href"]').value,
+            external: card.querySelector('[data-field="external"]').value === 'true'
+        });
+    });
+}
+function addContactItem() { collectAll(); data.contact.items.push({ label:'', value:'', href:'', external:false }); renderContactItems(); }
+
+// ----- GENERIC MOVE / REMOVE -----
+function swap(arr, i, j) {
+    if (j < 0 || j >= arr.length) return;
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+}
+
+function getArrayForPrefix(prefix) {
+    const map = {
+        education: data.engineering.education,
+        skills: data.engineering.skills,
+        languages: data.engineering.languages,
+        projects: data.engineering.projects,
+        profExp: data.engineering.professionalExperience,
+        categories: data.creative.categories,
+        partTime: data.partTimeExperience.items,
+        contactItems: data.contact.items
+    };
+    return map[prefix];
+}
+
+function getRenderFn(prefix) {
+    const map = {
+        education: renderEducation,
+        skills: renderSkills,
+        languages: renderLanguages,
+        projects: renderProjects,
+        profExp: renderProfExp,
+        categories: renderCategories,
+        partTime: renderPartTime,
+        contactItems: renderContactItems
+    };
+    return map[prefix];
+}
+
+function moveItem(prefix, index, dir) {
+    collectAll();
+    const arr = getArrayForPrefix(prefix);
+    swap(arr, index, index + dir);
+    getRenderFn(prefix)();
+}
+
+function removeItem(prefix, index) {
+    if (!confirm('Are you sure you want to delete this?')) return;
+    collectAll();
+    const arr = getArrayForPrefix(prefix);
+    arr.splice(index, 1);
+    getRenderFn(prefix)();
+}
+
+// ----- SAVE / LOAD / PREVIEW -----
+function saveJSON() {
+    collectAll();
+    const content = '/* Portfolio data — edit via admin.html, or replace this file with the exported one */\nconst PORTFOLIO_DATA = ' + JSON.stringify(data, null, 2) + ';\n';
+    const blob = new Blob([content], { type: 'application/javascript' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'data.js';
+    a.click();
+    URL.revokeObjectURL(url);
+    showToast('data.js downloaded! Replace the file in your js/ folder.');
+}
+
+function loadJSON() {
+    const input = document.getElementById('fileInput');
+    input.onchange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+            try {
+                let text = ev.target.result;
+                // Handle data.js format: strip the variable declaration wrapper
+                if (file.name.endsWith('.js')) {
+                    const match = text.match(/const\s+PORTFOLIO_DATA\s*=\s*([\s\S]*);?\s*$/);
+                    if (match) text = match[1].replace(/;\s*$/, '');
+                }
+                data = JSON.parse(text);
+                populateAll();
+                showToast('Data loaded successfully!');
+            } catch (err) {
+                showToast('Error: Could not parse file');
+            }
+        };
+        reader.readAsText(file);
+        input.value = '';
+    };
+    input.click();
+}
+
+function previewSite() {
+    collectAll();
+    localStorage.setItem('portfolioPreview', JSON.stringify(data));
+    window.open('./index.html', '_blank');
+    showToast('Preview opened in new tab');
+}
+
+function showToast(msg) {
+    const toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3000);
+}
+
+function esc(str) {
+    if (str == null) return '';
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// ----- IMAGE CROP TOOL -----
+const cropState = { callback: null, naturalW: 0, naturalH: 0, baseScale: 1, imgX: 0, imgY: 0, dragging: false, startX: 0, startY: 0, startImgX: 0, startImgY: 0 };
+const cropOverlay = document.getElementById('cropOverlay');
+const cropViewport = document.getElementById('cropViewport');
+const cropImage = document.getElementById('cropImage');
+const cropZoom = document.getElementById('cropZoom');
+
+function openCropModal(src, currentCrop, onSave) {
+    cropState.callback = onSave;
+    cropImage.src = src;
+    cropZoom.value = 100;
+    cropOverlay.classList.add('active');
+
+    cropImage.onload = function() {
+        cropState.naturalW = cropImage.naturalWidth;
+        cropState.naturalH = cropImage.naturalHeight;
+
+        // Calculate base scale so image covers the 200x280 viewport at zoom=100
+        const vpW = 200, vpH = 280;
+        cropState.baseScale = Math.max(vpW / cropState.naturalW, vpH / cropState.naturalH);
+
+        // Parse existing crop or default to center
+        let posX = 50, posY = 50, zoom = 100;
+        if (currentCrop) {
+            const parts = currentCrop.split(';');
+            const posParts = parts[0].split(/\s+/);
+            posX = parseFloat(posParts[0]) || 50;
+            posY = parseFloat(posParts[1]) || 50;
+            zoom = parseFloat(parts[1]) || 100;
+        }
+        cropZoom.value = zoom;
+        applyCropZoom();
+
+        // Convert object-position percentages to pixel offsets
+        const scale = cropState.baseScale * (zoom / 100);
+        const dispW = cropState.naturalW * scale;
+        const dispH = cropState.naturalH * scale;
+        cropState.imgX = -(posX / 100) * (dispW - vpW);
+        cropState.imgY = -(posY / 100) * (dispH - vpH);
+        if (dispW <= vpW) cropState.imgX = (vpW - dispW) / 2;
+        if (dispH <= vpH) cropState.imgY = (vpH - dispH) / 2;
+        cropImage.style.left = cropState.imgX + 'px';
+        cropImage.style.top = cropState.imgY + 'px';
+    };
+    // Trigger onload even if cached
+    if (cropImage.complete) cropImage.onload();
+}
+
+function applyCropZoom() {
+    const scale = cropState.baseScale * (parseInt(cropZoom.value) / 100);
+    const newW = cropState.naturalW * scale;
+    const newH = cropState.naturalH * scale;
+    cropImage.style.width = newW + 'px';
+    cropImage.style.height = newH + 'px';
+    clampPosition();
+}
+
+function clampPosition() {
+    const vpW = 200, vpH = 280;
+    const imgW = cropImage.offsetWidth;
+    const imgH = cropImage.offsetHeight;
+    // If image smaller than viewport, center it; otherwise clamp
+    if (imgW <= vpW) { cropState.imgX = (vpW - imgW) / 2; }
+    else { cropState.imgX = Math.min(0, Math.max(vpW - imgW, cropState.imgX)); }
+    if (imgH <= vpH) { cropState.imgY = (vpH - imgH) / 2; }
+    else { cropState.imgY = Math.min(0, Math.max(vpH - imgH, cropState.imgY)); }
+    cropImage.style.left = cropState.imgX + 'px';
+    cropImage.style.top = cropState.imgY + 'px';
+}
+
+function getCropValue() {
+    const vpW = 200, vpH = 280;
+    const imgW = cropImage.offsetWidth;
+    const imgH = cropImage.offsetHeight;
+    const posX = imgW <= vpW ? 50 : Math.round((-cropState.imgX) / (imgW - vpW) * 100);
+    const posY = imgH <= vpH ? 50 : Math.round((-cropState.imgY) / (imgH - vpH) * 100);
+    const zoom = cropZoom.value;
+    return `${posX} ${posY};${zoom}`;
+}
+
+cropZoom.addEventListener('input', () => {
+    applyCropZoom();
+});
+
+cropViewport.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    cropState.dragging = true;
+    cropState.startX = e.clientX;
+    cropState.startY = e.clientY;
+    cropState.startImgX = cropState.imgX;
+    cropState.startImgY = cropState.imgY;
+    cropViewport.classList.add('dragging');
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!cropState.dragging) return;
+    cropState.imgX = cropState.startImgX + (e.clientX - cropState.startX);
+    cropState.imgY = cropState.startImgY + (e.clientY - cropState.startY);
+    clampPosition();
+});
+
+document.addEventListener('mouseup', () => {
+    cropState.dragging = false;
+    cropViewport.classList.remove('dragging');
+});
+
+// Touch support
+cropViewport.addEventListener('touchstart', (e) => {
+    const t = e.touches[0];
+    cropState.dragging = true;
+    cropState.startX = t.clientX;
+    cropState.startY = t.clientY;
+    cropState.startImgX = cropState.imgX;
+    cropState.startImgY = cropState.imgY;
+});
+document.addEventListener('touchmove', (e) => {
+    if (!cropState.dragging) return;
+    const t = e.touches[0];
+    cropState.imgX = cropState.startImgX + (t.clientX - cropState.startX);
+    cropState.imgY = cropState.startImgY + (t.clientY - cropState.startY);
+    clampPosition();
+});
+document.addEventListener('touchend', () => { cropState.dragging = false; });
+
+document.getElementById('cropReset').addEventListener('click', () => {
+    cropZoom.value = 100;
+    applyCropZoom();
+    const vpW = 200, vpH = 280;
+    const imgW = cropImage.offsetWidth, imgH = cropImage.offsetHeight;
+    cropState.imgX = imgW <= vpW ? (vpW - imgW) / 2 : -(imgW - vpW) / 2;
+    cropState.imgY = imgH <= vpH ? (vpH - imgH) / 2 : -(imgH - vpH) / 2;
+    cropImage.style.left = cropState.imgX + 'px';
+    cropImage.style.top = cropState.imgY + 'px';
+});
+
+document.getElementById('cropCancel').addEventListener('click', () => {
+    cropOverlay.classList.remove('active');
+    cropState.callback = null;
+});
+
+document.getElementById('cropSave').addEventListener('click', () => {
+    const val = getCropValue();
+    if (cropState.callback) cropState.callback(val);
+    cropOverlay.classList.remove('active');
+    cropState.callback = null;
+    showToast('Crop saved!');
+});
+
+cropOverlay.addEventListener('click', (e) => {
+    if (e.target === cropOverlay) {
+        cropOverlay.classList.remove('active');
+        cropState.callback = null;
+    }
+});
+
+// ----- CROP FUNCTIONS FOR CATEGORIES -----
+function cropCarouselImage(ci, gi, ii) {
+    collectAll();
+    const group = data.creative.categories[ci].groups[gi];
+    // Support both string and object image entries
+    let imgEntry = group.images[ii];
+    let src = typeof imgEntry === 'string' ? imgEntry : imgEntry.src;
+    let currentCrop = typeof imgEntry === 'object' ? imgEntry.crop : null;
+
+    openCropModal(src, currentCrop, (cropVal) => {
+        // Convert string to object if needed
+        if (typeof group.images[ii] === 'string') {
+            group.images[ii] = { src: src, crop: cropVal };
+        } else {
+            group.images[ii].crop = cropVal;
+        }
+        renderCategories();
+    });
+}
+
+function cropCanvasImage(ci, vi) {
+    collectAll();
+    const item = data.creative.categories[ci].items[vi];
+    openCropModal(item.src, item.crop || null, (cropVal) => {
+        item.crop = cropVal;
+        renderCategories();
+    });
+}
+
+// ----- START -----
+init();
+</script>
+
+</body>
+</html>
