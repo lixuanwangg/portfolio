@@ -809,7 +809,7 @@ ul {
 
 .photo-carousel {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 200px));
+    grid-template-columns: repeat(auto-fill, 200px);
     gap: var(--space-sm);
     justify-content: center;
 }
@@ -1181,7 +1181,8 @@ ul {
 
     /* Video grid mobile */
     .video-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fill, 120px);
+        justify-content: center;
     }
 
     /* Skills grid mobile */
@@ -1229,10 +1230,6 @@ ul {
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .video-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 /* === RESPONSIVE: DESKTOP (1024px+) === */
@@ -1243,9 +1240,5 @@ ul {
 
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .video-grid {
-        grid-template-columns: repeat(3, 1fr);
     }
 }
