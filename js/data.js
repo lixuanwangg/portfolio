@@ -172,6 +172,19 @@ const PORTFOLIO_DATA = {
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%202%20Swan%20Wedding%203.jpg",
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%202%20Swan%20Wedding%204.jpg",
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%202%20Swan%20Wedding%205.jpg"
+            ],
+            "link": "http://instagram.com/swanwedding_jb",
+            "credits": [
+              {
+                "role": "Photographer",
+                "name": "@fff______11",
+                "link": "https://www.instagram.com/fff______11"
+              },
+              {
+                "role": "MUA",
+                "name": "@kelly_enomakeup.studio",
+                "link": "https://www.instagram.com/kelly_enomakeup.studio"
+              }
             ]
           },
           {
@@ -182,6 +195,14 @@ const PORTFOLIO_DATA = {
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%201%20Rangka%202.jpeg",
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%201%20Rangka%203.jpeg",
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%201%20Rangka%204.jpeg"
+            ],
+            "link": "https://www.instagram.com/rangkathecollection",
+            "credits": [
+              {
+                "role": "Photographer",
+                "name": "@visual_byfarish",
+                "link": "https://www.instagram.com/visual_byfarish"
+              }
             ]
           }
         ]
@@ -192,7 +213,7 @@ const PORTFOLIO_DATA = {
         "type": "photo-carousel",
         "groups": [
           {
-            "title": "Mizan",
+            "title": "@mixan_sl",
             "date": "January 2026",
             "images": [
               {
@@ -215,10 +236,11 @@ const PORTFOLIO_DATA = {
                 "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%205%20for%20Mizan%206.jpeg",
                 "crop": "58 50;100"
               }
-            ]
+            ],
+            "link": "https://www.instagram.com/mixan_sl"
           },
           {
-            "title": "Wa",
+            "title": "@4dh.w4._",
             "date": "January 2026",
             "images": [
               {
@@ -233,20 +255,22 @@ const PORTFOLIO_DATA = {
                 "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%204%20for%20Wa%203.jpg",
                 "crop": "0 45;105"
               }
-            ]
+            ],
+            "link": "https://www.instagram.com/4dh.w4._"
           },
           {
-            "title": "Velan",
+            "title": "@pozclicks.port",
             "date": "January 2026",
             "images": [
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%203%20for%20Velan%201.jpg",
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%203%20for%20Velan%202.jpg",
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%203%20for%20Velan%203.jpg",
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%203%20for%20Velan%204.jpg"
-            ]
+            ],
+            "link": "https://www.instagram.com/pozclicks.port"
           },
           {
-            "title": "Mizan & Wa",
+            "title": "@mixan_sl & @4dh.w4._",
             "date": "December 2025",
             "images": [
               {
@@ -263,7 +287,7 @@ const PORTFOLIO_DATA = {
             ]
           },
           {
-            "title": "Piu",
+            "title": "@haziqmnasir",
             "date": "December 2025",
             "images": [
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%201%20for%20Piu%201.jpg",
@@ -271,7 +295,8 @@ const PORTFOLIO_DATA = {
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%201%20for%20Piu%203.jpg",
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%201%20for%20Piu%204.jpg",
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%201%20for%20Piu%205.jpg"
-            ]
+            ],
+            "link": "https://www.instagram.com/haziqmnasir"
           }
         ]
       },
@@ -282,32 +307,32 @@ const PORTFOLIO_DATA = {
         "items": [
           {
             "youtubeId": "ujetxjNlEBg",
-            "caption": "Mizan",
-            "link": "",
+            "caption": "Luna Lights Wonderland",
+            "link": "https://www.instagram.com/reel/DT7qGDjkdHN/",
             "date": "January 2026"
           },
           {
             "youtubeId": "VkkZhvi8kV4",
-            "caption": "Area Studio — Meadow Heights",
-            "link": "",
+            "caption": "Meadow Heights Property",
+            "link": "https://www.instagram.com/reel/DTAFf-2ieJT/",
             "date": "January 2026"
           },
           {
             "youtubeId": "eVFlnWaXAVo",
             "caption": "Piu",
-            "link": "",
+            "link": "https://www.instagram.com/reel/DSAastZE5fH/",
             "date": "December 2025"
           },
           {
             "youtubeId": "nQZwkbDmixA",
-            "caption": "Seputeh Rasmi — Salenawati",
-            "link": "",
+            "caption": "The Bintang Perfume - Salenawati",
+            "link": "https://www.instagram.com/reel/DSCbqEJj7vA/",
             "date": "December 2025"
           },
           {
             "youtubeId": "jcePpmtglgA",
-            "caption": "Seputeh Rasmi — Liyana",
-            "link": "",
+            "caption": "The Bintang Perfume - Liyana",
+            "link": "https://www.instagram.com/reel/DR4KTEOjykN/",
             "date": "December 2025"
           }
         ]
@@ -320,19 +345,19 @@ const PORTFOLIO_DATA = {
           {
             "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%203%20for%20Mira.jpg",
             "caption": "MUA: @makeupbymirae.my",
-            "link": "",
+            "link": "https://www.instagram.com/makeupbymirae.my",
             "date": "December 2025"
           },
           {
             "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%202%20for%20Anis.jpg",
             "caption": "MUA: @nikisyasina",
-            "link": "",
+            "link": "https://www.threads.com/@nikisyasina",
             "date": "November 2025"
           },
           {
             "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%201%20for%20Aina.jpg",
             "caption": "MUA: @maneesbynanan",
-            "link": "",
+            "link": "https://www.instagram.com/maneesbynanan",
             "date": "November 2025"
           }
         ]
@@ -345,7 +370,7 @@ const PORTFOLIO_DATA = {
           {
             "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Nail%20Model%201%20for%20Tisha.jpg",
             "caption": "Nail tech: @akak_durianpermasjaya",
-            "link": "",
+            "link": "https://www.instagram.com/akak_durianpermasjaya",
             "date": "February 2026"
           }
         ]
@@ -364,13 +389,13 @@ const PORTFOLIO_DATA = {
           {
             "youtubeId": "JDZKmlJk1JU",
             "caption": "Gorjuz",
-            "link": "",
+            "link": "http://instagram.com/gorjuz.official",
             "date": "February 2026"
           },
           {
             "youtubeId": "8lrhWE8mQH0",
             "caption": "Stikbrand.my",
-            "link": "",
+            "link": "https://www.instagram.com/stikbrandmy",
             "date": "February 2026"
           }
         ]
