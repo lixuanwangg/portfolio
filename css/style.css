@@ -814,13 +814,26 @@ ul {
     justify-content: center;
 }
 
-.photo-carousel > img,
+.photo-carousel > img {
+    width: 200px;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    transition: box-shadow var(--transition-base);
+    flex-shrink: 0;
+}
+
+.photo-carousel > img:hover {
+    box-shadow: var(--shadow-card);
+}
+
 .photo-carousel > .canvas-card {
     width: 200px;
     flex-shrink: 0;
 }
 
-.photo-carousel img {
+.canvas-card img {
     width: 100%;
     aspect-ratio: 9 / 16;
     object-fit: cover;
@@ -829,7 +842,7 @@ ul {
     transition: box-shadow var(--transition-base);
 }
 
-.photo-carousel img:hover {
+.canvas-card img:hover {
     box-shadow: var(--shadow-card);
 }
 
