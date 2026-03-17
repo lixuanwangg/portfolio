@@ -815,7 +815,7 @@ ul {
 
 .photo-carousel img {
     width: 100%;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 9 / 16;
     object-fit: cover;
     border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
@@ -833,7 +833,7 @@ ul {
 
 .canvas-card img {
     width: 100%;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 9 / 16;
     object-fit: cover;
     border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
