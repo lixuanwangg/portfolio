@@ -888,6 +888,31 @@ ul {
     font-style: italic;
 }
 
+/* Credits */
+.credits {
+    text-align: center;
+    font-size: var(--fs-small);
+    color: var(--color-dark-light);
+    margin-bottom: var(--space-xs);
+    line-height: 1.6;
+}
+
+.credits a {
+    color: var(--color-dark);
+    text-decoration: underline;
+    text-decoration-color: var(--color-gold);
+    text-underline-offset: 2px;
+}
+
+.credits a:hover {
+    color: var(--color-gold);
+}
+
+.credits__sep {
+    color: var(--color-gold);
+    margin: 0 0.2rem;
+}
+
 /* Experience section titles get gold underline */
 .engineering__experience .subsection-title,
 .experience-pt .section__subtitle {

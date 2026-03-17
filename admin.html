@@ -534,6 +534,24 @@ function renderCanvasPreview(c, ci, vi) {
         + '</div>';
 }
 
+function renderCreditsUI(credits, prefix) {
+    credits = credits || [];
+    return `
+        <div class="field">
+            <label>Credits / Tags</label>
+            <div class="credits-list" data-prefix="${prefix}">
+                ${credits.map((cr, i) => `
+                    <div style="display:flex;gap:0.3rem;margin-bottom:0.3rem;align-items:center">
+                        <input data-field="${prefix}-credit-role-${i}" value="${esc(cr.role)}" placeholder="Role (e.g. Brand)" style="width:25%">
+                        <input data-field="${prefix}-credit-name-${i}" value="${esc(cr.name)}" placeholder="Name (e.g. @username)" style="width:30%">
+                        <input data-field="${prefix}-credit-link-${i}" value="${esc(cr.link || '')}" placeholder="Link (optional)" style="width:35%">
+                        <button class="btn btn-danger btn-sm" onclick="removeCredit('${prefix}', ${i})" style="flex-shrink:0">\u00d7</button>
+                    </div>`).join('')}
+                <button class="btn btn-outline btn-sm" onclick="addCredit('${prefix}')" style="margin-top:0.3rem">+ Add Credit</button>
+            </div>
+        </div>`;
+}
+
 function renderCategories() {
     const list = document.getElementById('categories-list');
     list.innerHTML = data.creative.categories.map((cat, ci) => {
@@ -552,6 +570,7 @@ function renderCategories() {
                     <div class="field"><label>Title</label><input data-field="group-title" value="${esc(g.title)}"></div>
                     <div class="field"><label>Link (optional)</label><input data-field="group-link" value="${esc(g.link || '')}" placeholder="e.g. https://instagram.com/username"></div>
                     <div class="field"><label>Date</label><input data-field="group-date" value="${esc(g.date)}"></div>
+                    ${renderCreditsUI(g.credits, 'g-' + ci + '-' + gi)}
                     <div class="field">
                         <label>Images</label>
                         <div class="image-list" data-images='${JSON.stringify(g.images)}'>
@@ -576,6 +595,7 @@ function renderCategories() {
                     <div class="field"><label>Caption</label><input data-field="caption" value="${esc(v.caption)}"></div>
                     <div class="field"><label>Link (optional)</label><input data-field="link" value="${esc(v.link || '')}" placeholder="e.g. https://instagram.com/username"></div>
                     <div class="field"><label>Date</label><input data-field="date" value="${esc(v.date)}"></div>
+                    ${renderCreditsUI(v.credits, 'v-' + ci + '-' + vi)}
                     ${v.youtubeId ? `<img src="https://img.youtube.com/vi/${esc(v.youtubeId)}/hqdefault.jpg" class="yt-preview">` : ''}
                 </div>`).join('');
             inner += `<button class="btn btn-outline btn-sm" onclick="addCatVideoItem(${ci})" style="margin-top:0.5rem">+ Add Video</button>`;
@@ -594,6 +614,7 @@ function renderCategories() {
                     <div class="field"><label>Caption</label><input data-field="caption" value="${esc(c.caption)}"></div>
                     <div class="field"><label>Link (optional)</label><input data-field="link" value="${esc(c.link || '')}" placeholder="e.g. https://instagram.com/username"></div>
                     <div class="field"><label>Date</label><input data-field="date" value="${esc(c.date)}"></div>
+                    ${renderCreditsUI(c.credits, 'c-' + ci + '-' + vi)}
                     ${renderCanvasPreview(c, ci, vi)}
                 </div>`).join('');
             inner += `<button class="btn btn-outline btn-sm" onclick="addCatCanvasItem(${ci})" style="margin-top:0.5rem">+ Add Canvas</button>`;
@@ -617,6 +638,20 @@ function renderCategories() {
     }).join('');
 }
 
+function collectCreditsFromCard(gc, prefix) {
+    var credits = [];
+    for (var i = 0; i < 50; i++) {
+        var roleEl = gc.querySelector('[data-field="' + prefix + '-credit-role-' + i + '"]');
+        if (!roleEl) break;
+        var nameEl = gc.querySelector('[data-field="' + prefix + '-credit-name-' + i + '"]');
+        var linkEl = gc.querySelector('[data-field="' + prefix + '-credit-link-' + i + '"]');
+        var cr = { role: roleEl.value, name: nameEl ? nameEl.value : '' };
+        if (linkEl && linkEl.value) cr.link = linkEl.value;
+        credits.push(cr);
+    }
+    return credits;
+}
+
 function collectCategories() {
     const catCards = document.querySelectorAll('#categories-list > .card');
     const oldCategories = data.creative.categories;
@@ -628,7 +663,7 @@ function collectCategories() {
 
         if (type === 'photo-carousel') {
             cat.groups = [];
-            card.querySelectorAll('.group-card').forEach(gc => {
+            card.querySelectorAll('.group-card').forEach((gc, gi) => {
                 const images = JSON.parse(gc.querySelector('.image-list').dataset.images);
                 var groupLink = gc.querySelector('[data-field="group-link"]').value;
                 var group = {
@@ -637,6 +672,10 @@ function collectCategories() {
                     images: images
                 };
                 if (groupLink) group.link = groupLink;
+                // Collect credits
+                var prefix = 'g-' + ci + '-' + gi;
+                var credits = collectCreditsFromCard(gc, prefix);
+                if (credits.length) group.credits = credits;
                 cat.groups.push(group);
             });
         } else {
@@ -645,11 +684,17 @@ function collectCategories() {
             cat.items = [];
             card.querySelectorAll('.group-card').forEach((gc, vi) => {
                 const item = {};
-                gc.querySelectorAll('[data-field]').forEach(el => { item[el.dataset.field] = el.value; });
+                gc.querySelectorAll('[data-field]').forEach(el => {
+                    if (el.dataset.field.indexOf('-credit-') === -1) item[el.dataset.field] = el.value;
+                });
                 // Preserve crop data from existing items
                 if (oldCat && oldCat.items && oldCat.items[vi] && oldCat.items[vi].crop) {
                     item.crop = oldCat.items[vi].crop;
                 }
+                // Collect credits
+                var cPrefix = (type === 'video-grid' ? 'v' : 'c') + '-' + ci + '-' + vi;
+                var credits = collectCreditsFromCard(gc, cPrefix);
+                if (credits.length) item.credits = credits;
                 cat.items.push(item);
             });
         }
@@ -664,6 +709,31 @@ function changeCatType(ci, newType) {
     cat.type = newType;
     if (newType === 'photo-carousel') { cat.groups = cat.groups || []; delete cat.items; }
     else { cat.items = cat.items || []; delete cat.groups; }
+    renderCategories();
+}
+function addCredit(prefix) {
+    collectAll();
+    var parts = prefix.split('-');
+    var type = parts[0], ci = +parts[1], idx = +parts[2];
+    var cat = data.creative.categories[ci];
+    var target;
+    if (type === 'g') target = cat.groups[idx];
+    else target = cat.items[idx];
+    if (!target) return;
+    target.credits = target.credits || [];
+    target.credits.push({ role: '', name: '', link: '' });
+    renderCategories();
+}
+function removeCredit(prefix, creditIdx) {
+    collectAll();
+    var parts = prefix.split('-');
+    var type = parts[0], ci = +parts[1], idx = +parts[2];
+    var cat = data.creative.categories[ci];
+    var target;
+    if (type === 'g') target = cat.groups[idx];
+    else target = cat.items[idx];
+    if (!target || !target.credits) return;
+    target.credits.splice(creditIdx, 1);
     renderCategories();
 }
 function addCatGroup(ci) { collectAll(); data.creative.categories[ci].groups.push({ title:'', date:'', images:[] }); renderCategories(); }

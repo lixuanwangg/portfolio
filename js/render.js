@@ -142,11 +142,19 @@ document.addEventListener('DOMContentLoaded', () => {
         return `object-position: ${pos.split(/\s+/).map(v => v + '%').join(' ')}`;
     }
 
+    function renderCredits(credits) {
+        if (!credits || credits.length === 0) return '';
+        return `<div class="credits">${credits.map((cr, i) =>
+            `${i > 0 ? ' <span class="credits__sep">*</span> ' : ''}${esc(cr.role)}: ${cr.link ? `<a href="${esc(cr.link)}" target="_blank" rel="noopener">${esc(cr.name)}</a>` : esc(cr.name)}`
+        ).join('')}</div>`;
+    }
+
     function renderCategory(cat) {
         if (cat.type === 'photo-carousel') {
             return cat.groups.map(g => `
                 <div class="photo-group">
                     <h4 class="photo-group-title">${g.link ? `<a href="${esc(g.link)}" target="_blank" rel="noopener">${esc(g.title)}</a>` : esc(g.title)} <span class="photo-group-date">${esc(g.date)}</span></h4>
+                    ${renderCredits(g.credits)}
                     <div class="photo-carousel">
                         ${g.images.map(img => {
                             const src = typeof img === 'string' ? img : img.src;
@@ -164,6 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="video-card__caption">
                             <p class="video-card__title">${v.link ? `<a href="${esc(v.link)}" target="_blank" rel="noopener">${esc(v.caption)}</a>` : esc(v.caption)}</p>
                             <p class="video-card__date">${esc(v.date)}</p>
+                            ${renderCredits(v.credits)}
                         </div>
                     </div>`).join('')}
             </div>`;
@@ -175,6 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <img src="${esc(c.src)}" alt="${esc(c.caption)}" loading="lazy" style="${cropStyle(c.crop)}">
                         <p class="canvas-card__caption">${c.link ? `<a href="${esc(c.link)}" target="_blank" rel="noopener">${esc(c.caption)}</a>` : esc(c.caption)}</p>
                         <p class="canvas-card__date">${esc(c.date)}</p>
+                        ${renderCredits(c.credits)}
                     </div>`).join('')}
             </div>`;
         }
