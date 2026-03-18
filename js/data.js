@@ -392,10 +392,16 @@ const PORTFOLIO_DATA = {
         ]
       },
       {
-        "id": "content-creation",
+        "id": "content-creator",
         "title": "Content Creator",
         "type": "video-grid",
         "items": [
+          {
+            "youtubeId": "hPCoeKHo7Uw",
+            "caption": "Glad2Glow",
+            "link": "https://instagram.com/glad2glow.my",
+            "date": "March 2026"
+          },
           {
             "youtubeId": "ZNeXwTr9Tw0",
             "caption": "Glad2Glow",
