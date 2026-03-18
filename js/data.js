@@ -10,7 +10,7 @@ const PORTFOLIO_DATA = {
     "name": "Li Xuan Wang",
     "nickname": "Lily",
     "subtitle": "Professional  •  Creative  •  Dreamer",
-    "intro": "Born and raised in Malaysia, I am a final year Chemical Engineering student who also stepped out of her comfort zone to pursue modelling and talent work. I believe in growth, elegance, and continuously refining myself both technically and creatively.",
+    "intro": "Based in Johor Bahru, Malaysia; I am a final year Chemical Engineering student who also stepped out of her comfort zone to pursue modelling and talent work. I believe in growth, elegance, and continuously refining myself both technically and creatively.",
     "ctaButtons": [
       {
         "label": "View Professional",
@@ -147,7 +147,7 @@ const PORTFOLIO_DATA = {
   "creative": {
     "sectionTitle": "Creative Portfolio",
     "sectionSubtitle": "Model • Talent • Canvas • Content Creator",
-    "intro": "In my senior year, I stepped out of my comfort zone to explore the world of modelling and talent work. What began as curiosity quickly became a passion — allowing me to express creativity, build confidence, and collaborate with amazing brands and teams.",
+    "intro": "In my senior year of university (2025), I stepped out of my comfort zone to explore my dream, which is the world of modelling and talent work. It quickly became a passion, allowing me to express creativity, build confidence, and collaborate with amazing brands and people.",
     "talentSkills": [
       "Dancing",
       "Guitar & Ukulele Basics",
