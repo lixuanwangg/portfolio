@@ -397,6 +397,18 @@ const PORTFOLIO_DATA = {
         "type": "video-grid",
         "items": [
           {
+            "youtubeId": "Mbw6wWzQIGA",
+            "caption": "Glad2Glow",
+            "link": "https://instagram.com/glad2glow.my",
+            "date": "April 2026"
+          },
+          {
+            "youtubeId": "oG5ASHVsXkI",
+            "caption": "Glad2Glow",
+            "link": "https://instagram.com/glad2glow.my",
+            "date": "April 2026"
+          },
+          {
             "youtubeId": "hPCoeKHo7Uw",
             "caption": "Glad2Glow",
             "link": "https://instagram.com/glad2glow.my",
