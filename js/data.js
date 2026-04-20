@@ -42,41 +42,46 @@ const PORTFOLIO_DATA = {
       {
         "degree": "Foundation in Physical Science",
         "school": "University of Technology Malaysia (UTM)",
-        "year": "Completed",
+        "year": "2021 – 2022",
         "details": "CGPA: 3.95"
       },
       {
         "degree": "Sijil Pelajaran Malaysia (SPM)",
         "school": "SMK Taman Daya (TDS)",
-        "year": "Completed",
+        "year": "2016 – 2021",
         "details": "Result: 9As"
       }
     ],
     "skills": [
       {
+        "icon": "",
+        "name": "Microsoft Office",
+        "desc": ""
+      },
+      {
         "icon": "∑",
         "name": "MATLAB",
-        "desc": "Numerical computing & optimization"
+        "desc": ""
       },
       {
         "icon": "⌨",
         "name": "Python",
-        "desc": "Programming & data analysis"
+        "desc": ""
       },
       {
         "icon": "□",
         "name": "AutoCAD",
-        "desc": "2D & 3D technical drawing"
+        "desc": ""
       },
       {
         "icon": "</>",
         "name": "C++",
-        "desc": "Object-oriented programming"
+        "desc": ""
       },
       {
         "icon": "☁",
         "name": "Google Workspace",
-        "desc": "Docs, Sheets, Slides & collaboration"
+        "desc": ""
       }
     ],
     "languages": [
@@ -90,7 +95,7 @@ const PORTFOLIO_DATA = {
       },
       {
         "name": "Mandarin",
-        "level": "Moderate"
+        "level": "Intermediate"
       }
     ],
     "projects": [
@@ -320,6 +325,12 @@ const PORTFOLIO_DATA = {
         "title": "Video Shoot Talent",
         "type": "video-grid",
         "items": [
+          {
+            "youtubeId": "gkjVdvqrekg",
+            "caption": "Avea Clinic",
+            "link": "https://www.instagram.com/avea.clinic",
+            "date": "March 2026"
+          },
           {
             "youtubeId": "ujetxjNlEBg",
             "caption": "Luna Lights Wonderland",
