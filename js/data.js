@@ -54,34 +54,39 @@ const PORTFOLIO_DATA = {
     ],
     "skills": [
       {
-        "icon": "",
-        "name": "Microsoft Office",
-        "desc": ""
+        "icon": "□",
+        "name": "AutoCAD",
+        "desc": "2D & 3D technical drawing, P&ID design"
       },
       {
         "icon": "∑",
         "name": "MATLAB",
-        "desc": ""
-      },
-      {
-        "icon": "⌨",
-        "name": "Python",
-        "desc": ""
-      },
-      {
-        "icon": "□",
-        "name": "AutoCAD",
-        "desc": ""
+        "desc": "Data optimization & numerical computing"
       },
       {
         "icon": "</>",
         "name": "C++",
-        "desc": ""
+        "desc": "Object-oriented programming"
+      },
+      {
+        "icon": "⌨",
+        "name": "Python",
+        "desc": "Programming & data analysis"
       },
       {
         "icon": "☁",
         "name": "Google Workspace",
-        "desc": ""
+        "desc": "Docs, Sheets, Slides & collaboration"
+      },
+      {
+        "icon": "📄",
+        "name": "Microsoft Office",
+        "desc": "Word, Excel, PowerPoint"
+      },
+      {
+        "icon": "⚗",
+        "name": "Aspen Plus",
+        "desc": "Chemical process simulation"
       }
     ],
     "languages": [
@@ -100,35 +105,59 @@ const PORTFOLIO_DATA = {
     ],
     "projects": [
       {
-        "title": "Microplastics Case Study",
-        "desc": "Research on microplastics contamination and environmental impact in Malaysia.",
+        "title": "Moisture Removal from Stingless Bee Honey",
+        "desc": "Final year project investigating moisture removal from stingless bee honey using forced convection aerated flow, optimizing drying parameters to preserve honey quality.",
         "tags": [
-          "Research",
-          "Environmental"
+          "Final Year Project",
+          "Process Engineering"
         ]
       },
       {
         "title": "3D Ergonomic Table & 2D P&ID",
-        "desc": "Designed a 3D ergonomic table model and 2D piping & instrumentation diagram using AutoCAD.",
+        "desc": "Designed a 3D ergonomic table model and a detailed piping & instrumentation diagram for a chemical plant using AutoCAD.",
         "tags": [
           "AutoCAD",
-          "Design"
+          "Technical Drawing"
         ]
       },
       {
-        "title": "MATLAB Optimization Program",
-        "desc": "Developed an optimization program for chemical engineering process calculations.",
+        "title": "MATLAB Data Optimization",
+        "desc": "Developed a MATLAB program to optimize process data for chemical engineering applications, improving calculation efficiency and accuracy.",
         "tags": [
           "MATLAB",
           "Optimization"
         ]
       },
       {
-        "title": "Lab Experiments & Technical Reports",
-        "desc": "Conducted laboratory experiments and authored comprehensive technical reports.",
+        "title": "Laboratory Research & Reports",
+        "desc": "Conducted experiments, wrote proposals, and authored comprehensive technical reports across 8 lab courses covering various chemical engineering disciplines.",
         "tags": [
           "Lab Work",
-          "Documentation"
+          "Research"
+        ]
+      },
+      {
+        "title": "Microplastics Case Study",
+        "desc": "Researched microplastics contamination and its environmental impact in Malaysia, analysing sources, distribution, and mitigation strategies.",
+        "tags": [
+          "Research",
+          "Environmental"
+        ]
+      },
+      {
+        "title": "H.O.P.E Pet Shelter Sales Initiative",
+        "desc": "Led a team of 12 members in organising a sales initiative, raising RM300 in profit donated to H.O.P.E Pet Shelter.",
+        "tags": [
+          "Leadership",
+          "Community Service"
+        ]
+      },
+      {
+        "title": "Personal Portfolio Website",
+        "desc": "Built a responsive portfolio website from scratch using HTML, CSS, JavaScript, and Claude AI, featuring a custom admin panel for content management.",
+        "tags": [
+          "Web Development",
+          "VS Code"
         ]
       }
     ],
