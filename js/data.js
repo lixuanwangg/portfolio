@@ -40,6 +40,12 @@ const PORTFOLIO_DATA = {
         "details": "Current CGPA: 3.52"
       },
       {
+        "degree": "Malaysian University English Test (MUET)",
+        "school": "",
+        "year": "2021",
+        "details": "Band 4.5"
+      },
+      {
         "degree": "Foundation in Physical Science",
         "school": "University of Technology Malaysia (UTM)",
         "year": "2021 – 2022",
@@ -482,7 +488,7 @@ const PORTFOLIO_DATA = {
     "items": [
       {
         "date": "Aug 2024 – Present",
-        "role": "Digital Goods Reseller",
+        "role": "Customer Service Associate",
         "company": "REDX GAME",
         "desc": "Managed digital goods reselling operations, handling customer inquiries and transactions for gaming products."
       },
