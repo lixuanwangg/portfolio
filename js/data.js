@@ -361,6 +361,18 @@ const PORTFOLIO_DATA = {
         "type": "video-grid",
         "items": [
           {
+            "youtubeId": "XlmnhZW8kIk",
+            "caption": "LUXE Studio Komtar JBCC",
+            "link": "https://www.tiktok.com/@luxehairsalonjb/",
+            "date": "April 2026"
+          },
+          {
+            "youtubeId": "Z3apj0KncU0",
+            "caption": "LUXE Studio Komtar JBCC",
+            "link": "https://www.tiktok.com/@luxehairsalonjb/",
+            "date": "April 2026"
+          },
+          {
             "youtubeId": "gkjVdvqrekg",
             "caption": "Avea Clinic",
             "link": "https://www.instagram.com/avea.clinic",
