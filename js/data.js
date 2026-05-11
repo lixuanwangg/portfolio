@@ -361,21 +361,33 @@ const PORTFOLIO_DATA = {
         "type": "video-grid",
         "items": [
           {
+            "youtubeId": "p2BqPlGMfqw",
+            "caption": "Eco Spring",
+            "link": "https://www.instagram.com/reel/DX2mhqoGrkk/",
+            "date": "May 2026"
+          },
+          {
+            "youtubeId": "0OqVPh1Diw",
+            "caption": "LUXE Studio Komtar JBCC",
+            "link": "https://vt.tiktok.com/ZS9TV57kN/",
+            "date": "April 2026"
+          },
+          {
             "youtubeId": "XlmnhZW8kIk",
             "caption": "LUXE Studio Komtar JBCC",
-            "link": "https://www.tiktok.com/@luxehairsalonjb/",
+            "link": "https://vt.tiktok.com/ZS9jP8XdA/",
             "date": "April 2026"
           },
           {
             "youtubeId": "Z3apj0KncU0",
             "caption": "LUXE Studio Komtar JBCC",
-            "link": "https://www.tiktok.com/@luxehairsalonjb/",
+            "link": "https://vt.tiktok.com/ZS9T4XK52/",
             "date": "April 2026"
           },
           {
             "youtubeId": "gkjVdvqrekg",
             "caption": "Avea Clinic",
-            "link": "https://www.instagram.com/avea.clinic",
+            "link": "https://www.instagram.com/reel/DWgZJecvFbe",
             "date": "March 2026"
           },
           {
@@ -455,39 +467,51 @@ const PORTFOLIO_DATA = {
         "type": "video-grid",
         "items": [
           {
+            "youtubeId": "ssIjRj5y3Oo",
+            "caption": "REDX Game",
+            "link": "https://www.instagram.com/reel/DYKSyYczWRN/?igsh=M3FqcXl4cmFycnJs",
+            "date": "May 2026"
+          },
+          {
+            "youtubeId": "wYWnyyjhsCI",
+            "caption": "Glad2Glow",
+            "link": "https://www.instagram.com/reel/DX8cQFkS-hU/",
+            "date": "May 2026"
+          },
+          {
             "youtubeId": "Mbw6wWzQIGA",
             "caption": "Glad2Glow",
-            "link": "https://instagram.com/glad2glow.my",
+            "link": "https://www.instagram.com/reel/DXayKaAzyl2",
             "date": "April 2026"
           },
           {
             "youtubeId": "oG5ASHVsXkI",
             "caption": "Glad2Glow",
-            "link": "https://instagram.com/glad2glow.my",
+            "link": "https://www.instagram.com/reel/DW51p7rEwik",
             "date": "April 2026"
           },
           {
             "youtubeId": "hPCoeKHo7Uw",
             "caption": "Glad2Glow",
-            "link": "https://instagram.com/glad2glow.my",
+            "link": "https://www.instagram.com/p/DV_FH_9pc21",
             "date": "March 2026"
           },
           {
             "youtubeId": "ZNeXwTr9Tw0",
             "caption": "Glad2Glow",
-            "link": "https://instagram.com/glad2glow.my",
+            "link": "https://www.instagram.com/p/DV8gP_6pYcu/",
             "date": "March 2026"
           },
           {
             "youtubeId": "JDZKmlJk1JU",
             "caption": "Gorjuz",
-            "link": "http://instagram.com/gorjuz.official",
+            "link": "https://www.instagram.com/reel/DVN_derE6EI",
             "date": "February 2026"
           },
           {
             "youtubeId": "8lrhWE8mQH0",
             "caption": "Stikbrand.my",
-            "link": "https://www.instagram.com/stikbrandmy",
+            "link": "https://www.instagram.com/reel/DUsnmOtkwhy",
             "date": "February 2026"
           }
         ]
