@@ -467,9 +467,15 @@ const PORTFOLIO_DATA = {
         "type": "video-grid",
         "items": [
           {
+            "youtubeId": "Rd-cO6UqkpY",
+            "caption": "Glad2Glow",
+            "link": "https://www.instagram.com/reel/DYPQrJUy-8F/",
+            "date": "May 2026"
+          },
+          {
             "youtubeId": "ssIjRj5y3Oo",
             "caption": "REDX Game",
-            "link": "https://www.instagram.com/reel/DYKSyYczWRN/?igsh=M3FqcXl4cmFycnJs",
+            "link": "https://www.instagram.com/reel/DYKSyYczWRN/",
             "date": "May 2026"
           },
           {
