@@ -361,6 +361,12 @@ const PORTFOLIO_DATA = {
         "type": "video-grid",
         "items": [
           {
+            "youtubeId": "e1N__ZLYks8",
+            "caption": "Eco Spring",
+            "link": "https://vt.tiktok.com/ZSxkPscQG/",
+            "date": "May 2026"
+          },
+          {
             "youtubeId": "p2BqPlGMfqw",
             "caption": "Eco Spring",
             "link": "https://www.instagram.com/reel/DX2mhqoGrkk/",
@@ -466,6 +472,12 @@ const PORTFOLIO_DATA = {
         "title": "Content Creator",
         "type": "video-grid",
         "items": [
+          {
+            "youtubeId": "pqnHSCi-27k",
+            "caption": "Glad2Glow",
+            "link": "https://www.instagram.com/reel/DYjFTB_Se8a/",
+            "date": "May 2026"
+          },
           {
             "youtubeId": "Rd-cO6UqkpY",
             "caption": "Glad2Glow",
