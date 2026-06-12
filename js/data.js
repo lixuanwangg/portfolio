@@ -429,49 +429,22 @@ const PORTFOLIO_DATA = {
         ]
       },
       {
-        "id": "canvas",
-        "title": "Canvas",
-        "type": "canvas-grid",
-        "items": [
-          {
-            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%203%20for%20Mira.jpg",
-            "caption": "MUA: @makeupbymirae.my",
-            "link": "https://www.instagram.com/makeupbymirae.my",
-            "date": "December 2025"
-          },
-          {
-            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%202%20for%20Anis.jpg",
-            "caption": "MUA: @nikisyasina",
-            "link": "https://www.threads.com/@nikisyasina",
-            "date": "November 2025"
-          },
-          {
-            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%201%20for%20Aina.jpg",
-            "caption": "MUA: @maneesbynanan",
-            "link": "https://www.instagram.com/maneesbynanan",
-            "date": "November 2025"
-          }
-        ]
-      },
-      {
-        "id": "nail-model",
-        "title": "Nail Model",
-        "type": "canvas-grid",
-        "items": [
-          {
-            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Nail%20Model%201%20for%20Tisha.jpg",
-            "caption": "Nail tech: @akak_durianpermasjaya",
-            "link": "https://www.instagram.com/akak_durianpermasjaya",
-            "date": "February 2026",
-            "crop": "40 50;100"
-          }
-        ]
-      },
-      {
         "id": "content-creator",
         "title": "Content Creator",
         "type": "video-grid",
         "items": [
+          {
+            "youtubeId": "hSfzXabX8Ks",
+            "caption": "redBus",
+            "link": "https://www.instagram.com/reel/DZZXVnySVcF/",
+            "date": "June 2026"
+          },
+          {
+            "youtubeId": "Cx96TWp7pX4",
+            "caption": "redBus",
+            "link": "https://www.instagram.com/reel/DZWQn6RyjiC/",
+            "date": "June 2026"
+          },
           {
             "youtubeId": "pqnHSCi-27k",
             "caption": "Glad2Glow",
@@ -531,6 +504,45 @@ const PORTFOLIO_DATA = {
             "caption": "Stikbrand.my",
             "link": "https://www.instagram.com/reel/DUsnmOtkwhy",
             "date": "February 2026"
+          }
+        ]
+      },
+      {
+        "id": "canvas",
+        "title": "Canvas",
+        "type": "canvas-grid",
+        "items": [
+          {
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%203%20for%20Mira.jpg",
+            "caption": "MUA: @makeupbymirae.my",
+            "link": "https://www.instagram.com/makeupbymirae.my",
+            "date": "December 2025"
+          },
+          {
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%202%20for%20Anis.jpg",
+            "caption": "MUA: @nikisyasina",
+            "link": "https://www.threads.com/@nikisyasina",
+            "date": "November 2025"
+          },
+          {
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%201%20for%20Aina.jpg",
+            "caption": "MUA: @maneesbynanan",
+            "link": "https://www.instagram.com/maneesbynanan",
+            "date": "November 2025"
+          }
+        ]
+      },
+      {
+        "id": "nail-model",
+        "title": "Nail Model",
+        "type": "canvas-grid",
+        "items": [
+          {
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Nail%20Model%201%20for%20Tisha.jpg",
+            "caption": "Nail tech: @akak_durianpermasjaya",
+            "link": "https://www.instagram.com/akak_durianpermasjaya",
+            "date": "February 2026",
+            "crop": "40 50;100"
           }
         ]
       }
