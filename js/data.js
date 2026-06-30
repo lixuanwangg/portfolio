@@ -361,6 +361,12 @@ const PORTFOLIO_DATA = {
         "type": "video-grid",
         "items": [
           {
+            "youtubeId": "4GsO9r9rTXw",
+            "caption": "Kamatto (series in Tiktok)",
+            "link": "https://www.tiktok.com/@kamatto.official/video/7651499868447444241",
+            "date": "June 2026"
+          },
+          {
             "youtubeId": "e1N__ZLYks8",
             "caption": "Eco Spring",
             "link": "https://vt.tiktok.com/ZSxkPscQG/",
@@ -433,6 +439,12 @@ const PORTFOLIO_DATA = {
         "title": "Content Creator",
         "type": "video-grid",
         "items": [
+          {
+            "youtubeId": "jHodenA3BqI",
+            "caption": "Lemongrass Spa @ Eco Botanic",
+            "link": "https://www.instagram.com/reel/DaMVDFey1Fu/",
+            "date": "June 2026"
+          },
           {
             "youtubeId": "hSfzXabX8Ks",
             "caption": "redBus",
