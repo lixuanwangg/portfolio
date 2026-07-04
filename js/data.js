@@ -256,6 +256,33 @@ const PORTFOLIO_DATA = {
         "type": "photo-carousel",
         "groups": [
           {
+            "title": "@geoffkaru",
+            "date": "June 2026",
+            "images": [
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%206%20for%20Geoff%201.jpg",
+                "crop": "7 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%206%20for%20Geoff%202.jpg",
+                "crop": "64 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%206%20for%20Geoff%203.jpg",
+                "crop": "59 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%206%20for%20Geoff%204.jpg",
+                "crop": "59 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%206%20for%20Geoff%205.jpg",
+                "crop": "15 50;100"
+              }
+            ],
+            "link": "http://instagram.com/geoffkaru"
+          },
+          {
             "title": "@mixan_sl",
             "date": "January 2026",
             "images": [
