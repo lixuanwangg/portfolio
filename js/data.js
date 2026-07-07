@@ -120,7 +120,8 @@ const PORTFOLIO_DATA = {
         "title": "Sustainable Aviation Fuel Anchor Plant",
         "desc": "Plant design project that integrates the concept of Net-Zero Emission Eco-Industrial Park by turning Palm Fatty Acid Distillate (PFAD) into Sustainable Aviation Fuel, while its byproducts are sent to a subsidiary plant for further processing.",
         "tags": [
-          "Plant Design Project"
+          "Plant Design Project",
+          "Net-Zero Emission"
         ]
       },
       {
@@ -419,7 +420,7 @@ const PORTFOLIO_DATA = {
             "date": "May 2026"
           },
           {
-            "youtubeId": "0OqVPh1Diw",
+            "youtubeId": "_0OqVPh1Diw",
             "caption": "LUXE Studio Komtar JBCC",
             "link": "https://vt.tiktok.com/ZS9TV57kN/",
             "date": "April 2026"
