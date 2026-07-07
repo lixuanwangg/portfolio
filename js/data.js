@@ -40,9 +40,15 @@ const PORTFOLIO_DATA = {
         "details": "Current CGPA: 3.52"
       },
       {
+        "degree": "Learn to Program: The Fundamentals (Python)",
+        "school": "The University of Toronto (Coursera)",
+        "year": "2024",
+        "details": ""
+      },
+      {
         "degree": "Malaysian University English Test (MUET)",
         "school": "",
-        "year": "2021",
+        "year": "2022",
         "details": "Band 4.5"
       },
       {
@@ -110,6 +116,13 @@ const PORTFOLIO_DATA = {
       }
     ],
     "projects": [
+      {
+        "title": "Sustainable Aviation Fuel Anchor Plant",
+        "desc": "Plant design project that integrates the concept of Net-Zero Emission Eco-Industrial Park by turning Palm Fatty Acid Distillate (PFAD) into Sustainable Aviation Fuel, while its byproducts are sent to a subsidiary plant for further processing.",
+        "tags": [
+          "Plant Design Project"
+        ]
+      },
       {
         "title": "Moisture Removal from Stingless Bee Honey",
         "desc": "Final year project investigating moisture removal from stingless bee honey using forced convection aerated flow, optimizing drying parameters to preserve honey quality.",
