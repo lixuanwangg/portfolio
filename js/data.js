@@ -43,7 +43,7 @@ const PORTFOLIO_DATA = {
         "degree": "Learn to Program: The Fundamentals (Python)",
         "school": "The University of Toronto (Coursera)",
         "year": "2024",
-        "details": ""
+        "details": "Grade: 93%"
       },
       {
         "degree": "Malaysian University English Test (MUET)",
@@ -480,6 +480,12 @@ const PORTFOLIO_DATA = {
         "title": "Content Creator",
         "type": "video-grid",
         "items": [
+          {
+            "youtubeId": "04zj-S9UMV0",
+            "caption": "Eyesco x YY Eyewear",
+            "link": "https://www.instagram.com/p/DakfvU7ye7G/",
+            "date": "July 2026"
+          },
           {
             "youtubeId": "jHodenA3BqI",
             "caption": "Lemongrass Spa @ Eco Botanic",
