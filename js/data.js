@@ -572,6 +572,12 @@ const PORTFOLIO_DATA = {
         "type": "canvas-grid",
         "items": [
           {
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%204%20for%20Mira.heic",
+            "caption": "MUA: @makeupbymirae.my",
+            "link": "https://www.instagram.com/makeupbymirae.my",
+            "date": "July 2026"
+          },
+          {
             "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%203%20for%20Mira.jpg",
             "caption": "MUA: @makeupbymirae.my",
             "link": "https://www.instagram.com/makeupbymirae.my",
