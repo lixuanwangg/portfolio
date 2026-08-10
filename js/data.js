@@ -481,6 +481,18 @@ const PORTFOLIO_DATA = {
         "type": "video-grid",
         "items": [
           {
+            "youtubeId": "xNJSmVcbc38",
+            "caption": "Heragen",
+            "link": "https://www.instagram.com/p/Db2TLvMSWdT/",
+            "date": "August 2026"
+          },
+          {
+            "youtubeId": "GMoNrWRIYLo",
+            "caption": "fitmode",
+            "link": "https://www.instagram.com/p/DbkO-ZySitN/",
+            "date": "August 2026"
+          },
+          {
             "youtubeId": "04zj-S9UMV0",
             "caption": "Eyesco x YY Eyewear",
             "link": "https://www.instagram.com/p/DakfvU7ye7G/",
@@ -571,6 +583,12 @@ const PORTFOLIO_DATA = {
         "title": "Canvas",
         "type": "canvas-grid",
         "items": [
+          {
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%205%20for%20Shira.png",
+            "caption": "MUA: @nurraeshi_",
+            "link": "https://www.instagram.com/nurraeshi_",
+            "date": "July 2026"
+          },
           {
             "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%204%20for%20Mira.heic",
             "caption": "MUA: @makeupbymirae.my",
