@@ -590,7 +590,7 @@ const PORTFOLIO_DATA = {
             "date": "July 2026"
           },
           {
-            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%204%20for%20Mira.heic",
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%204%20for%20Mira.png",
             "caption": "MUA: @makeupbymirae.my",
             "link": "https://www.instagram.com/makeupbymirae.my",
             "date": "July 2026"
