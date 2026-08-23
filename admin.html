@@ -67,6 +67,13 @@
         .group-card { background: #fafafa; border: 1px solid #e5e5e7; border-radius: 8px; padding: 1rem; margin-bottom: 0.75rem; }
         .group-card h4 { font-size: 0.85rem; margin-bottom: 0.5rem; color: #86868b; text-transform: uppercase; letter-spacing: 0.5px; }
 
+        /* Section jump-nav (creative admin) */
+        .cat-jump-nav { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+        .cat-jump-nav button { padding: 0.4rem 0.8rem; font-size: 0.75rem; background: #fff; color: #C9A96E; border: 1px solid #C9A96E; border-radius: 20px; cursor: pointer; transition: all 0.2s; }
+        .cat-jump-nav button:hover { background: #C9A96E; color: #fff; }
+        .cat-jump-nav .cat-jump-empty { color: #86868b; font-size: 0.8rem; font-style: italic; }
+        .category-card { scroll-margin-top: 1rem; }
+
         /* Toast notification */
         .toast { position: fixed; bottom: 2rem; right: 2rem; background: #1d1d1f; color: #fff; padding: 0.8rem 1.5rem; border-radius: 8px; font-size: 0.9rem; opacity: 0; transition: opacity 0.3s; z-index: 999; }
         .toast.show { opacity: 1; }
@@ -135,36 +142,36 @@
         <!-- Education -->
         <div class="panel" id="panel-education">
             <h2>Education</h2>
+            <button class="btn btn-outline" onclick="addEducation()" style="margin-bottom:1rem">+ Add Education</button>
             <div id="education-list"></div>
-            <button class="btn btn-outline" onclick="addEducation()">+ Add Education</button>
         </div>
 
         <!-- Skills -->
         <div class="panel" id="panel-skills">
             <h2>Technical Skills</h2>
+            <button class="btn btn-outline" onclick="addSkill()" style="margin-bottom:1rem">+ Add Skill</button>
             <div id="skills-list"></div>
-            <button class="btn btn-outline" onclick="addSkill()">+ Add Skill</button>
         </div>
 
         <!-- Languages -->
         <div class="panel" id="panel-languages">
             <h2>Languages</h2>
+            <button class="btn btn-outline" onclick="addLanguage()" style="margin-bottom:1rem">+ Add Language</button>
             <div id="languages-list"></div>
-            <button class="btn btn-outline" onclick="addLanguage()">+ Add Language</button>
         </div>
 
         <!-- Projects -->
         <div class="panel" id="panel-projects">
             <h2>Projects</h2>
+            <button class="btn btn-outline" onclick="addProject()" style="margin-bottom:1rem">+ Add Project</button>
             <div id="projects-list"></div>
-            <button class="btn btn-outline" onclick="addProject()">+ Add Project</button>
         </div>
 
         <!-- Professional Experience -->
         <div class="panel" id="panel-profExp">
             <h2>Professional Experience</h2>
+            <button class="btn btn-outline" onclick="addProfExp()" style="margin-bottom:1rem">+ Add Experience</button>
             <div id="profExp-list"></div>
-            <button class="btn btn-outline" onclick="addProfExp()">+ Add Experience</button>
         </div>
 
         <!-- Creative Intro -->
@@ -178,23 +185,24 @@
         <!-- Talent Skills -->
         <div class="panel" id="panel-talentSkills">
             <h2>Talent Skills</h2>
+            <button class="btn btn-outline" onclick="addTalentSkill()" style="margin-bottom:1rem">+ Add Skill</button>
             <div id="talentSkills-list"></div>
-            <button class="btn btn-outline" onclick="addTalentSkill()">+ Add Skill</button>
         </div>
 
         <!-- Creative Categories -->
         <div class="panel" id="panel-creativeCategories">
             <h2>Creative Sections</h2>
             <p style="color:#86868b; font-size:0.85rem; margin-bottom:1rem;">Each section can be a Photo Carousel, Video Grid, or Canvas Grid. Add groups/items within each.</p>
+            <div id="categories-jump" class="cat-jump-nav"></div>
+            <button class="btn btn-outline" onclick="addCategory()" style="margin-bottom:1rem">+ Add Section</button>
             <div id="categories-list"></div>
-            <button class="btn btn-outline" onclick="addCategory()">+ Add Section</button>
         </div>
 
         <!-- Part-Time -->
         <div class="panel" id="panel-partTime">
             <h2>Part-Time Experience</h2>
+            <button class="btn btn-outline" onclick="addPartTime()" style="margin-bottom:1rem">+ Add Experience</button>
             <div id="partTime-list"></div>
-            <button class="btn btn-outline" onclick="addPartTime()">+ Add Experience</button>
         </div>
 
         <!-- Contact -->
@@ -385,7 +393,7 @@ function renderEducation() {
             <div class="field"><label>Details</label><input data-field="details" value="${esc(e.details)}"></div>
         </div>`).join('');
 }
-function addEducation() { collectAll(); data.engineering.education.push({ degree:'', school:'', year:'', details:'' }); renderEducation(); }
+function addEducation() { collectAll(); data.engineering.education.unshift({ degree:'', school:'', year:'', details:'' }); renderEducation(); }
 
 // ----- SKILLS -----
 function renderSkills() {
@@ -398,7 +406,7 @@ function renderSkills() {
             <div class="field"><label>Description</label><input data-field="desc" value="${esc(s.desc)}"></div>
         </div>`).join('');
 }
-function addSkill() { collectAll(); data.engineering.skills.push({ icon:'', name:'', desc:'' }); renderSkills(); }
+function addSkill() { collectAll(); data.engineering.skills.unshift({ icon:'', name:'', desc:'' }); renderSkills(); }
 
 // ----- LANGUAGES -----
 function renderLanguages() {
@@ -410,7 +418,7 @@ function renderLanguages() {
             <div class="field"><label>Level</label><input data-field="level" value="${esc(l.level)}"></div>
         </div>`).join('');
 }
-function addLanguage() { collectAll(); data.engineering.languages.push({ name:'', level:'' }); renderLanguages(); }
+function addLanguage() { collectAll(); data.engineering.languages.unshift({ name:'', level:'' }); renderLanguages(); }
 
 // ----- PROJECTS -----
 function renderProjects() {
@@ -441,7 +449,7 @@ function collectProjects() {
         });
     });
 }
-function addProject() { collectAll(); data.engineering.projects.push({ title:'', desc:'', tags:[] }); renderProjects(); }
+function addProject() { collectAll(); data.engineering.projects.unshift({ title:'', desc:'', tags:[] }); renderProjects(); }
 
 function addTag(e, input) {
     if (e.key !== 'Enter' || !input.value.trim()) return;
@@ -490,7 +498,7 @@ function collectProfExp() {
         });
     });
 }
-function addProfExp() { collectAll(); data.engineering.professionalExperience.push({ date:'', role:'', company:'', bullets:[] }); renderProfExp(); }
+function addProfExp() { collectAll(); data.engineering.professionalExperience.unshift({ date:'', role:'', company:'', bullets:[] }); renderProfExp(); }
 
 // ----- TALENT SKILLS -----
 function renderTalentSkills() {
@@ -509,7 +517,7 @@ function collectTalentSkills() {
     const inputs = document.querySelectorAll('#talentSkills-list [data-field="skill"]');
     data.creative.talentSkills = Array.from(inputs).map(i => i.value).filter(v => v.trim());
 }
-function addTalentSkill() { collectAll(); data.creative.talentSkills.push(''); renderTalentSkills(); }
+function addTalentSkill() { collectAll(); data.creative.talentSkills.unshift(''); renderTalentSkills(); }
 function moveTalentSkill(i, dir) { collectAll(); swap(data.creative.talentSkills, i, i+dir); renderTalentSkills(); }
 function removeTalentSkill(i) { collectAll(); data.creative.talentSkills.splice(i, 1); renderTalentSkills(); }
 
@@ -552,7 +560,25 @@ function renderCreditsUI(credits, prefix) {
         </div>`;
 }
 
+function renderCategoriesJumpNav() {
+    const nav = document.getElementById('categories-jump');
+    if (!nav) return;
+    if (!data.creative.categories.length) {
+        nav.innerHTML = '<span class="cat-jump-empty">No sections yet. Add one below to get started.</span>';
+        return;
+    }
+    nav.innerHTML = data.creative.categories.map((cat, ci) =>
+        `<button onclick="jumpToCategory(${ci})">${esc(cat.title) || 'Untitled'}</button>`
+    ).join('');
+}
+
+function jumpToCategory(ci) {
+    const el = document.getElementById('admin-cat-' + ci);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 function renderCategories() {
+    renderCategoriesJumpNav();
     const list = document.getElementById('categories-list');
     list.innerHTML = data.creative.categories.map((cat, ci) => {
         let inner = '';
@@ -579,7 +605,7 @@ function renderCategories() {
                         <input placeholder="Paste image URL and press Enter" onkeydown="addCatImage(event, this, ${ci}, ${gi})" style="margin-top:0.3rem">
                     </div>
                 </div>`).join('');
-            inner += `<button class="btn btn-outline btn-sm" onclick="addCatGroup(${ci})" style="margin-top:0.5rem">+ Add Group</button>`;
+            inner = `<button class="btn btn-outline btn-sm" onclick="addCatGroup(${ci})" style="margin-bottom:0.75rem">+ Add Group</button>` + inner;
         } else if (cat.type === 'video-grid') {
             inner = (cat.items || []).map((v, vi) => `
                 <div class="group-card">
@@ -598,7 +624,7 @@ function renderCategories() {
                     ${renderCreditsUI(v.credits, 'v-' + ci + '-' + vi)}
                     ${v.youtubeId ? `<img src="https://img.youtube.com/vi/${esc(v.youtubeId)}/hqdefault.jpg" class="yt-preview">` : ''}
                 </div>`).join('');
-            inner += `<button class="btn btn-outline btn-sm" onclick="addCatVideoItem(${ci})" style="margin-top:0.5rem">+ Add Video</button>`;
+            inner = `<button class="btn btn-outline btn-sm" onclick="addCatVideoItem(${ci})" style="margin-bottom:0.75rem">+ Add Video</button>` + inner;
         } else if (cat.type === 'canvas-grid') {
             inner = (cat.items || []).map((c, vi) => `
                 <div class="group-card">
@@ -617,10 +643,10 @@ function renderCategories() {
                     ${renderCreditsUI(c.credits, 'c-' + ci + '-' + vi)}
                     ${renderCanvasPreview(c, ci, vi)}
                 </div>`).join('');
-            inner += `<button class="btn btn-outline btn-sm" onclick="addCatCanvasItem(${ci})" style="margin-top:0.5rem">+ Add Canvas</button>`;
+            inner = `<button class="btn btn-outline btn-sm" onclick="addCatCanvasItem(${ci})" style="margin-bottom:0.75rem">+ Add Canvas</button>` + inner;
         }
 
-        return `<div class="card">
+        return `<div class="card category-card" id="admin-cat-${ci}">
             <div class="card-header">
                 <h3>${esc(cat.title) || 'New Section'}</h3>
                 ${makeCardActions('categories', ci, data.creative.categories.length)}
@@ -702,7 +728,7 @@ function collectCategories() {
     });
 }
 
-function addCategory() { collectAll(); data.creative.categories.push({ id:'new', title:'', type:'photo-carousel', groups:[] }); renderCategories(); }
+function addCategory() { collectAll(); data.creative.categories.unshift({ id:'new', title:'', type:'photo-carousel', groups:[] }); renderCategories(); }
 function changeCatType(ci, newType) {
     collectAll();
     const cat = data.creative.categories[ci];
@@ -736,9 +762,9 @@ function removeCredit(prefix, creditIdx) {
     target.credits.splice(creditIdx, 1);
     renderCategories();
 }
-function addCatGroup(ci) { collectAll(); data.creative.categories[ci].groups.push({ title:'', date:'', images:[] }); renderCategories(); }
-function addCatVideoItem(ci) { collectAll(); data.creative.categories[ci].items.push({ youtubeId:'', caption:'', date:'' }); renderCategories(); }
-function addCatCanvasItem(ci) { collectAll(); data.creative.categories[ci].items.push({ src:'', caption:'', date:'' }); renderCategories(); }
+function addCatGroup(ci) { collectAll(); data.creative.categories[ci].groups.unshift({ title:'', date:'', images:[] }); renderCategories(); }
+function addCatVideoItem(ci) { collectAll(); data.creative.categories[ci].items.unshift({ youtubeId:'', caption:'', date:'' }); renderCategories(); }
+function addCatCanvasItem(ci) { collectAll(); data.creative.categories[ci].items.unshift({ src:'', caption:'', date:'' }); renderCategories(); }
 function removeCatGroup(ci, gi) { if (!confirm('Delete this group?')) return; collectAll(); data.creative.categories[ci].groups.splice(gi, 1); renderCategories(); }
 function removeCatItem(ci, vi) { if (!confirm('Delete this item?')) return; collectAll(); data.creative.categories[ci].items.splice(vi, 1); renderCategories(); }
 function moveCatGroup(ci, gi, dir) { collectAll(); swap(data.creative.categories[ci].groups, gi, gi+dir); renderCategories(); }
@@ -764,7 +790,7 @@ function renderPartTime() {
             <div class="field"><label>Description</label><textarea data-field="desc" rows="2">${esc(item.desc)}</textarea></div>
         </div>`).join('');
 }
-function addPartTime() { collectAll(); data.partTimeExperience.items.push({ date:'', role:'', company:'', desc:'' }); renderPartTime(); }
+function addPartTime() { collectAll(); data.partTimeExperience.items.unshift({ date:'', role:'', company:'', desc:'' }); renderPartTime(); }
 
 // ----- CONTACT ITEMS -----
 function renderContactItems() {

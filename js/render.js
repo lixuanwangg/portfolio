@@ -207,8 +207,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 </ul>
             </div>
 
+            <div class="creative__nav reveal">
+                ${cr.categories.map(cat =>
+                    `<a href="#${esc(cat.id)}" class="btn btn--outline">${esc(cat.title)}</a>`
+                ).join('')}
+            </div>
+
             ${cr.categories.map(cat => `
-                <div class="creative-category reveal">
+                <div class="creative-category reveal" id="${esc(cat.id)}">
                     <h3 class="subsection-title">${esc(cat.title)}</h3>
                     ${renderCategory(cat)}
                 </div>`).join('')}

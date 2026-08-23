@@ -596,6 +596,25 @@ ul {
     color: var(--color-gold);
 }
 
+/* Creative section quick-nav */
+.creative__nav {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: var(--space-md) auto var(--space-lg);
+    max-width: 900px;
+}
+
+.creative__nav .btn {
+    font-size: var(--fs-small);
+    padding: 0.6rem 1.2rem;
+}
+
+.creative-category {
+    scroll-margin-top: 90px;
+}
+
 /* Brand Cards */
 .brand-card {
     background: var(--color-white);
@@ -1271,6 +1290,16 @@ ul {
 
     .talent-skills-list li {
         padding: 0.3rem 0.6rem;
+    }
+
+    /* Creative quick-nav */
+    .creative__nav {
+        gap: 0.5rem;
+    }
+
+    .creative__nav .btn {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.9rem;
     }
 }
 
