@@ -13,13 +13,18 @@ const PORTFOLIO_DATA = {
     "intro": "Based in Johor Bahru, Malaysia; I am a final year Chemical Engineering student who also stepped out of her comfort zone to pursue modelling and talent work. I believe in growth, elegance, and continuously refining myself both technically and creatively.",
     "ctaButtons": [
       {
-        "label": "View Professional",
+        "label": "Professional",
         "href": "#professional",
         "style": "primary"
       },
       {
-        "label": "View Creative",
+        "label": "Creative",
         "href": "#creative",
+        "style": "outline"
+      },
+      {
+        "label": "Part-Time",
+        "href": "#experience-pt",
         "style": "outline"
       },
       {
