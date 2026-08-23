@@ -36,8 +36,8 @@ const PORTFOLIO_DATA = {
       {
         "degree": "Bachelor of Chemical Engineering with Honours",
         "school": "University of Technology Malaysia (UTM)",
-        "year": "2022 – Present (Expected 2026)",
-        "details": "Current CGPA: 3.52"
+        "year": "2022 – 2026",
+        "details": "Current CGPA: 3.57"
       },
       {
         "degree": "Learn to Program: The Fundamentals (Python)",
@@ -480,6 +480,24 @@ const PORTFOLIO_DATA = {
         "title": "Content Creator",
         "type": "video-grid",
         "items": [
+          {
+            "youtubeId": "-I-Bz7N22V4",
+            "caption": "SKIN1004",
+            "link": "https://www.instagram.com/p/DcRrbjpTUsn/",
+            "date": "August 2026"
+          },
+          {
+            "youtubeId": "PSPVEHN3Nrg",
+            "caption": "SKIN1004",
+            "link": "https://www.instagram.com/p/DcRK_b7yTgo/",
+            "date": "August 2026"
+          },
+          {
+            "youtubeId": "cYPzGibY7_I",
+            "caption": "SKIN1004",
+            "link": "https://www.instagram.com/reel/DcGNQJRyRnH/",
+            "date": "August 2026"
+          },
           {
             "youtubeId": "xNJSmVcbc38",
             "caption": "Heragen",
