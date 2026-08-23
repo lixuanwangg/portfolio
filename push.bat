@@ -1,7 +1,7 @@
 @echo off
 echo Pushing updates to your portfolio website...
 cd /d "%~dp0"
-git add js/data.js
+git add -A
 git commit -m "Update content"
 git push
 echo.
