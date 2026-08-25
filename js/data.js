@@ -42,7 +42,7 @@ const PORTFOLIO_DATA = {
         "degree": "Bachelor of Chemical Engineering with Honours",
         "school": "University of Technology Malaysia (UTM)",
         "year": "2022 – 2026",
-        "details": "Current CGPA: 3.57"
+        "details": "CGPA: 3.57"
       },
       {
         "degree": "Learn to Program: The Fundamentals (Python)",
@@ -222,6 +222,42 @@ const PORTFOLIO_DATA = {
         "title": "Modelling Work",
         "type": "photo-carousel",
         "groups": [
+          {
+            "title": "Zenior Beauty",
+            "date": "August 2026",
+            "images": [
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%203%20Zenior%20Beauty%201.jpeg",
+                "crop": "37 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%203%20Zenior%20Beauty%202.jpeg",
+                "crop": "92 50;100"
+              },
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%203%20Zenior%20Beauty%203.jpeg",
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%203%20Zenior%20Beauty%204.jpeg",
+                "crop": "16 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%203%20Zenior%20Beauty%205.jpeg",
+                "crop": "57 50;100"
+              }
+            ],
+            "link": "https://www.instagram.com/zeniorbeauty/",
+            "credits": [
+              {
+                "role": "Photographer",
+                "name": "@studio.dellea",
+                "link": "https://www.instagram.com/studio.dellea/"
+              },
+              {
+                "role": "MUA",
+                "name": "@jiehah_benyahyamuajb",
+                "link": "https://www.instagram.com/jiehah_benyahyamuajb/"
+              }
+            ]
+          },
           {
             "title": "Swan Wedding JB",
             "date": "February 2026",
@@ -659,7 +695,7 @@ const PORTFOLIO_DATA = {
     "sectionSubtitle": "Work & Growth",
     "items": [
       {
-        "date": "Aug 2024 – Present",
+        "date": "Aug 2024 – May 2026",
         "role": "Customer Service Associate",
         "company": "REDX GAME",
         "desc": "Managed digital goods reselling operations, handling customer inquiries and transactions for gaming products."
