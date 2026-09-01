@@ -10,7 +10,7 @@ const PORTFOLIO_DATA = {
     "name": "Li Xuan Wang",
     "nickname": "Lily",
     "subtitle": "Professional  •  Creative  •  Dreamer",
-    "intro": "Based in Johor Bahru, Malaysia; I am a final year Chemical Engineering student who also stepped out of her comfort zone to pursue modelling and talent work. I believe in growth, elegance, and continuously refining myself both technically and creatively.",
+    "intro": "Based in Johor Bahru, Malaysia; I am a Chemical Engineering graduate who also stepped out of her comfort zone to pursue modelling and talent work. I believe in growth, elegance, and continuously refining myself both technically and creatively.",
     "ctaButtons": [
       {
         "label": "Professional",
@@ -40,7 +40,7 @@ const PORTFOLIO_DATA = {
     "education": [
       {
         "degree": "Bachelor of Chemical Engineering with Honours",
-        "school": "University of Technology Malaysia (UTM)",
+        "school": "Universiti Teknologi Malaysia (UTM)",
         "year": "2022 – 2026",
         "details": "CGPA: 3.57"
       },
@@ -58,7 +58,7 @@ const PORTFOLIO_DATA = {
       },
       {
         "degree": "Foundation in Physical Science",
-        "school": "University of Technology Malaysia (UTM)",
+        "school": "Universiti Teknologi Malaysia (UTM)",
         "year": "2021 – 2022",
         "details": "CGPA: 3.95"
       },
@@ -697,7 +697,7 @@ const PORTFOLIO_DATA = {
       {
         "date": "Aug 2024 – May 2026",
         "role": "Customer Service Associate",
-        "company": "REDX GAME",
+        "company": "REDX Game Sdn. Bhd.",
         "desc": "Managed digital goods reselling operations, handling customer inquiries and transactions for gaming products."
       },
       {
