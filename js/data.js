@@ -443,6 +443,12 @@ const PORTFOLIO_DATA = {
         "type": "video-grid",
         "items": [
           {
+            "youtubeId": "iG5PPhIO53A",
+            "caption": "Caelyn (series in Tiktok)",
+            "link": "https://vt.tiktok.com/ZSqMJAn4c/",
+            "date": "August 2026"
+          },
+          {
             "youtubeId": "4GsO9r9rTXw",
             "caption": "Kamatto (series in Tiktok)",
             "link": "https://www.tiktok.com/@kamatto.official/video/7651499868447444241",
