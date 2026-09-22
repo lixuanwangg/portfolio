@@ -528,6 +528,12 @@ const PORTFOLIO_DATA = {
         "type": "video-grid",
         "items": [
           {
+            "youtubeId": "RypwArxufak",
+            "caption": "CHANDO",
+            "link": "https://www.instagram.com/p/DdjKufXSyEL/",
+            "date": "September 2026"
+          },
+          {
             "youtubeId": "-I-Bz7N22V4",
             "caption": "SKIN1004",
             "link": "https://www.instagram.com/p/DcRrbjpTUsn/",
@@ -649,48 +655,36 @@ const PORTFOLIO_DATA = {
         "type": "canvas-grid",
         "items": [
           {
-            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%205%20for%20Shira.png",
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas/Canvas%205%20for%20Shira.png",
             "caption": "MUA: @nurraeshi_",
             "link": "https://www.instagram.com/nurraeshi_",
-            "date": "July 2026"
+            "date": "July 2026",
+            "crop": "56 50;100"
           },
           {
-            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%204%20for%20Mira.png",
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas/Canvas%204%20for%20Mira.png",
             "caption": "MUA: @makeupbymirae.my",
             "link": "https://www.instagram.com/makeupbymirae.my",
             "date": "July 2026"
           },
           {
-            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%203%20for%20Mira.jpg",
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas/Canvas%203%20for%20Mira.jpg",
             "caption": "MUA: @makeupbymirae.my",
             "link": "https://www.instagram.com/makeupbymirae.my",
             "date": "December 2025"
           },
           {
-            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%202%20for%20Anis.jpg",
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas/Canvas%202%20for%20Anis.jpg",
             "caption": "MUA: @nikisyasina",
             "link": "https://www.threads.com/@nikisyasina",
             "date": "November 2025"
           },
           {
-            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas%201%20for%20Aina.jpg",
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas/Canvas%201%20for%20Aina.jpg",
             "caption": "MUA: @maneesbynanan",
             "link": "https://www.instagram.com/maneesbynanan",
-            "date": "November 2025"
-          }
-        ]
-      },
-      {
-        "id": "nail-model",
-        "title": "Nail Model",
-        "type": "canvas-grid",
-        "items": [
-          {
-            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Nail%20Model%201%20for%20Tisha.jpg",
-            "caption": "Nail tech: @akak_durianpermasjaya",
-            "link": "https://www.instagram.com/akak_durianpermasjaya",
-            "date": "February 2026",
-            "crop": "40 50;100"
+            "date": "November 2025",
+            "crop": "38 100;110"
           }
         ]
       }
