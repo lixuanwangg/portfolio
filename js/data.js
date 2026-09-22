@@ -298,7 +298,7 @@ const PORTFOLIO_DATA = {
               },
               {
                 "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model/2026/Model_Model%201%20Rangka%202.jpeg",
-                "crop": "61 50;100"
+                "crop": "50 50;100"
               },
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model/2026/Model_Model%201%20Rangka%203.jpeg",
               "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model/2026/Model_Model%201%20Rangka%204.jpeg"
