@@ -226,21 +226,18 @@ const PORTFOLIO_DATA = {
             "title": "Zenior Beauty",
             "date": "August 2026",
             "images": [
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model/2026/Model_Model%203%20Zenior%20Beauty%201.jpeg",
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%203%20Zenior%20Beauty%201.jpeg",
-                "crop": "37 50;100"
-              },
-              {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%203%20Zenior%20Beauty%202.jpeg",
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model/2026/Model_Model%203%20Zenior%20Beauty%202.jpeg",
                 "crop": "92 50;100"
               },
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%203%20Zenior%20Beauty%203.jpeg",
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model/2026/Model_Model%203%20Zenior%20Beauty%203.jpeg",
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%203%20Zenior%20Beauty%204.jpeg",
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model/2026/Model_Model%203%20Zenior%20Beauty%204.jpeg",
                 "crop": "16 50;100"
               },
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%203%20Zenior%20Beauty%205.jpeg",
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model/2026/Model_Model%203%20Zenior%20Beauty%205.jpeg",
                 "crop": "57 50;100"
               }
             ],
@@ -262,14 +259,20 @@ const PORTFOLIO_DATA = {
             "title": "Swan Wedding JB",
             "date": "February 2026",
             "images": [
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%202%20Swan%20Wedding%201.jpg",
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%202%20Swan%20Wedding%202.jpg",
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%202%20Swan%20Wedding%203.jpg",
-                "crop": "18 50;100"
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model/2026/Model_Model%202%20Swan%20Wedding%201.jpg",
+                "crop": "67 50;100"
               },
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%202%20Swan%20Wedding%204.jpg",
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%202%20Swan%20Wedding%205.jpg"
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model/2026/Model_Model%202%20Swan%20Wedding%202.jpg",
+                "crop": "40 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model/2026/Model_Model%202%20Swan%20Wedding%203.jpg",
+                "crop": "21 50;100"
+              },
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model/2026/Model_Model%202%20Swan%20Wedding%204.jpg",
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model/2026/Model_Model%202%20Swan%20Wedding%205.jpg"
             ],
             "link": "http://instagram.com/swanwedding_jb",
             "credits": [
@@ -289,10 +292,16 @@ const PORTFOLIO_DATA = {
             "title": "Rangka The Collection",
             "date": "January 2026",
             "images": [
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%201%20Rangka%201.jpeg",
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%201%20Rangka%202.jpeg",
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%201%20Rangka%203.jpeg",
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model%201%20Rangka%204.jpeg"
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model/2026/Model_Model%201%20Rangka%201.jpeg",
+                "crop": "56 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model/2026/Model_Model%201%20Rangka%202.jpeg",
+                "crop": "61 50;100"
+              },
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model/2026/Model_Model%201%20Rangka%203.jpeg",
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Model/2026/Model_Model%201%20Rangka%204.jpeg"
             ],
             "link": "https://www.instagram.com/rangkathecollection",
             "credits": [
@@ -315,24 +324,24 @@ const PORTFOLIO_DATA = {
             "date": "June 2026",
             "images": [
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%206%20for%20Geoff%201.jpg",
-                "crop": "7 50;100"
-              },
-              {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%206%20for%20Geoff%202.jpg",
-                "crop": "64 50;100"
-              },
-              {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%206%20for%20Geoff%203.jpg",
-                "crop": "59 50;100"
-              },
-              {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%206%20for%20Geoff%204.jpg",
-                "crop": "59 50;100"
-              },
-              {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%206%20for%20Geoff%205.jpg",
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%206%20for%20Geoff%201.jpg",
                 "crop": "15 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%206%20for%20Geoff%202.jpg",
+                "crop": "59 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%206%20for%20Geoff%203.jpg",
+                "crop": "48 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%206%20for%20Geoff%204.jpg",
+                "crop": "59 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%206%20for%20Geoff%205.jpg",
+                "crop": "7 50;100"
               }
             ],
             "link": "http://instagram.com/geoffkaru"
@@ -342,24 +351,24 @@ const PORTFOLIO_DATA = {
             "date": "January 2026",
             "images": [
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%205%20for%20Mizan%202.jpg",
-                "crop": "61 50;100"
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%205%20for%20Mizan%201.jpeg",
+                "crop": "57 50;100"
               },
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%205%20for%20Mizan%203.jpg",
-                "crop": "36 50;100"
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%205%20for%20Mizan%202.jpg",
+                "crop": "59 50;100"
               },
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%205%20for%20Mizan%204.jpeg",
-                "crop": "56 50;100"
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%205%20for%20Mizan%203.jpg",
+                "crop": "38 50;100"
               },
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%205%20for%20Mizan%205.jpg",
-                "crop": "63 50;100"
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%205%20for%20Mizan%204.jpeg",
+                "crop": "67 50;100"
               },
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%205%20for%20Mizan%206.jpeg",
-                "crop": "58 50;100"
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%205%20for%20Mizan%205.jpg",
+                "crop": "60 50;100"
               }
             ],
             "link": "https://www.instagram.com/mixan_sl"
@@ -369,16 +378,16 @@ const PORTFOLIO_DATA = {
             "date": "January 2026",
             "images": [
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%204%20for%20Wa%201.jpg",
-                "crop": "30 50;100"
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%204%20for%20Wa%201.jpg",
+                "crop": "29 50;100"
               },
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%204%20for%20Wa%202.jpg",
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%204%20for%20Wa%202.jpg",
                 "crop": "51 50;100"
               },
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%204%20for%20Wa%203.jpg",
-                "crop": "0 45;105"
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%204%20for%20Wa%203.jpg",
+                "crop": "0 0;110"
               }
             ],
             "link": "https://www.instagram.com/4dh.w4._"
@@ -388,19 +397,19 @@ const PORTFOLIO_DATA = {
             "date": "January 2026",
             "images": [
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%203%20for%20Velan%201.jpg",
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%203%20for%20Velan%201.jpg",
                 "crop": "100 50;100"
               },
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%203%20for%20Velan%202.jpg",
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%203%20for%20Velan%202.jpg",
                 "crop": "100 50;100"
               },
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%203%20for%20Velan%203.jpg",
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%203%20for%20Velan%203.jpg",
                 "crop": "100 50;100"
               },
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%203%20for%20Velan%204.jpg",
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%203%20for%20Velan%204.jpg",
                 "crop": "100 50;100"
               }
             ],
@@ -411,15 +420,18 @@ const PORTFOLIO_DATA = {
             "date": "December 2025",
             "images": [
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%202%20for%20Mizan%20and%20Wa%201.jpg",
-                "crop": "38 50;100"
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2025/Talent%20Photoshoot%202%20for%20Mizan%20and%20Wa%201.jpg",
+                "crop": "37 50;100"
               },
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%202%20for%20Mizan%20and%20Wa%202.jpg",
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%202%20for%20Mizan%20and%20Wa%203.jpg",
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%202%20for%20Mizan%20and%20Wa%204.jpg",
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%202%20for%20Mizan%20and%20Wa%205.jpg",
-                "crop": "56 50;100"
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2025/Talent%20Photoshoot%202%20for%20Mizan%20and%20Wa%202.jpg",
+                "crop": "50 50;100"
+              },
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2025/Talent%20Photoshoot%202%20for%20Mizan%20and%20Wa%203.jpg",
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2025/Talent%20Photoshoot%202%20for%20Mizan%20and%20Wa%204.jpg",
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2025/Talent%20Photoshoot%202%20for%20Mizan%20and%20Wa%205.jpg",
+                "crop": "55 50;100"
               }
             ]
           },
@@ -427,11 +439,20 @@ const PORTFOLIO_DATA = {
             "title": "@haziqmnasir",
             "date": "December 2025",
             "images": [
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%201%20for%20Piu%201.jpg",
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%201%20for%20Piu%202.jpg",
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%201%20for%20Piu%203.jpg",
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%201%20for%20Piu%204.jpg",
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot%201%20for%20Piu%205.jpg"
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2025/Talent%20Photoshoot%201%20for%20Piu%201.jpg",
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2025/Talent%20Photoshoot%201%20for%20Piu%202.jpg",
+                "crop": "100 100;105"
+              },
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2025/Talent%20Photoshoot%201%20for%20Piu%203.jpg",
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2025/Talent%20Photoshoot%201%20for%20Piu%204.jpg",
+                "crop": "100 17;105"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2025/Talent%20Photoshoot%201%20for%20Piu%205.jpg",
+                "crop": "50 50;100"
+              }
             ],
             "link": "https://www.instagram.com/haziqmnasir"
           }
@@ -655,36 +676,38 @@ const PORTFOLIO_DATA = {
         "type": "canvas-grid",
         "items": [
           {
-            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas/Canvas%205%20for%20Shira.png",
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas/2026/Canvas_Canvas%205%20for%20Shira.png",
             "caption": "MUA: @nurraeshi_",
             "link": "https://www.instagram.com/nurraeshi_",
             "date": "July 2026",
-            "crop": "56 50;100"
+            "crop": "55 50;100"
           },
           {
-            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas/Canvas%204%20for%20Mira.png",
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas/2026/Canvas_Canvas%204%20for%20Mira.png",
             "caption": "MUA: @makeupbymirae.my",
             "link": "https://www.instagram.com/makeupbymirae.my",
-            "date": "July 2026"
+            "date": "July 2026",
+            "crop": "62 50;100"
           },
           {
-            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas/Canvas%203%20for%20Mira.jpg",
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas/2025/Canvas_Canvas%203%20for%20Mira.jpg",
             "caption": "MUA: @makeupbymirae.my",
             "link": "https://www.instagram.com/makeupbymirae.my",
-            "date": "December 2025"
+            "date": "December 2025",
+            "crop": "50 50;100"
           },
           {
-            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas/Canvas%202%20for%20Anis.jpg",
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas/2025/Canvas_Canvas%202%20for%20Anis.jpg",
             "caption": "MUA: @nikisyasina",
             "link": "https://www.threads.com/@nikisyasina",
             "date": "November 2025"
           },
           {
-            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas/Canvas%201%20for%20Aina.jpg",
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Canvas/2025/Canvas_Canvas%201%20for%20Aina.jpg",
             "caption": "MUA: @maneesbynanan",
             "link": "https://www.instagram.com/maneesbynanan",
             "date": "November 2025",
-            "crop": "38 100;110"
+            "crop": "38 99;110"
           }
         ]
       }
