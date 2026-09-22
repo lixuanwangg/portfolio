@@ -320,6 +320,27 @@ const PORTFOLIO_DATA = {
         "type": "photo-carousel",
         "groups": [
           {
+            "title": "@karya.harith",
+            "date": "September 2026",
+            "images": [
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%207%20for%20Harith%201.jpg",
+                "crop": "56 50;100"
+              },
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%207%20for%20Harith%202.jpg",
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%207%20for%20Harith%203.jpg",
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%207%20for%20Harith%204.jpg",
+                "crop": "56 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%207%20for%20Harith%205.jpg",
+                "crop": "0 50;100"
+              }
+            ],
+            "link": "https://instagram.com/karya.harith"
+          },
+          {
             "title": "@geoffkaru",
             "date": "June 2026",
             "images": [
