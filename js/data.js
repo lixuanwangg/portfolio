@@ -320,6 +320,23 @@ const PORTFOLIO_DATA = {
         "type": "photo-carousel",
         "groups": [
           {
+            "title": "@mixan_sl",
+            "date": "September 2026",
+            "images": [
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%208%20for%20Mizan%201.jpg",
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%208%20for%20Mizan%202.jpg",
+                "crop": "65 50;100"
+              },
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%208%20for%20Mizan%203.jpg",
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%208%20for%20Mizan%204.jpg",
+                "crop": "0 50;100"
+              }
+            ],
+            "link": "https://www.instagram.com/mixan_sl"
+          },
+          {
             "title": "@karya.harith",
             "date": "September 2026",
             "images": [
