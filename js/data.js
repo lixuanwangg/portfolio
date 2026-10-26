@@ -508,6 +508,12 @@ const PORTFOLIO_DATA = {
             "date": "August 2026"
           },
           {
+            "youtubeId": "O17U3mcZzvo",
+            "caption": "J Project Garage JB (series in Facebook)",
+            "link": "https://www.facebook.com/reel/854206304441757",
+            "date": "August 2026"
+          },
+          {
             "youtubeId": "4GsO9r9rTXw",
             "caption": "Kamatto (series in Tiktok)",
             "link": "https://www.tiktok.com/@kamatto.official/video/7651499868447444241",
@@ -811,12 +817,6 @@ const PORTFOLIO_DATA = {
     "email": "lilywanglixuan@gmail.com",
     "items": [
       {
-        "label": "Phone",
-        "value": "+6011-36183789",
-        "href": "tel:+60113618378",
-        "external": false
-      },
-      {
         "label": "Email",
         "value": "lilywanglixuan@gmail.com",
         "href": "mailto:lilywanglixuan@gmail.com",
@@ -831,7 +831,7 @@ const PORTFOLIO_DATA = {
       {
         "label": "WhatsApp",
         "value": "Send a message",
-        "href": "https://wa.me/601136183789",
+        "href": "https://wa.me/@lixuanwang_",
         "external": true
       }
     ]
