@@ -323,39 +323,24 @@ const PORTFOLIO_DATA = {
             "title": "@mixan_sl",
             "date": "September 2026",
             "images": [
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%208%20for%20Mizan%201.jpg",
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%208%20for%20Mizan%202.jpg",
-                "crop": "65 50;100"
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%207%20for%20Mizan%201.jpg",
+                "crop": "59 50;100"
               },
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%208%20for%20Mizan%203.jpg",
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%208%20for%20Mizan%204.jpg",
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%207%20for%20Mizan%202.jpg",
+                "crop": "61 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%207%20for%20Mizan%203.jpg",
+                "crop": "50 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%207%20for%20Mizan%204.jpg",
                 "crop": "0 50;100"
               }
             ],
             "link": "https://www.instagram.com/mixan_sl"
-          },
-          {
-            "title": "@karya.harith",
-            "date": "September 2026",
-            "images": [
-              {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%207%20for%20Harith%201.jpg",
-                "crop": "56 50;100"
-              },
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%207%20for%20Harith%202.jpg",
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%207%20for%20Harith%203.jpg",
-              {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%207%20for%20Harith%204.jpg",
-                "crop": "56 50;100"
-              },
-              {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%207%20for%20Harith%205.jpg",
-                "crop": "0 50;100"
-              }
-            ],
-            "link": "https://instagram.com/karya.harith"
           },
           {
             "title": "@geoffkaru",
@@ -497,10 +482,53 @@ const PORTFOLIO_DATA = {
         ]
       },
       {
+        "id": "event-photoshoot-model",
+        "title": "Event Photoshoot Model",
+        "type": "photo-carousel",
+        "groups": [
+          {
+            "title": "Hari Malaysia",
+            "date": "September 2026",
+            "images": [
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20for%20Harith%201.jpg",
+                "crop": "61 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20for%20Harith%202.jpg",
+                "crop": "72 50;100"
+              },
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20for%20Harith%203.jpg",
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20for%20Harith%204.jpg",
+                "crop": "57 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20for%20Harith%205.jpg",
+                "crop": "50 50;100"
+              }
+            ],
+            "credits": [
+              {
+                "role": "Photographer",
+                "name": "@karya.harith",
+                "link": "https://instagram.com/karya.harith"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "video-shoot-talent",
         "title": "Video Shoot Talent",
         "type": "video-grid",
         "items": [
+          {
+            "youtubeId": "z4p262gLy1M",
+            "caption": "Top 1 Hair Salon",
+            "link": "https://www.tiktok.com/@top1hairsalon/video/7689754569399700756",
+            "date": "September 2026"
+          },
           {
             "youtubeId": "iG5PPhIO53A",
             "caption": "Caelyn (series in Tiktok)",
@@ -592,6 +620,12 @@ const PORTFOLIO_DATA = {
         "title": "Content Creator",
         "type": "video-grid",
         "items": [
+          {
+            "youtubeId": "GDnYz59Ir1o",
+            "caption": "Bora Bora Headspa",
+            "link": "https://www.instagram.com/p/DfwXT6NSmsm/",
+            "date": "November 2026"
+          },
           {
             "youtubeId": "RypwArxufak",
             "caption": "CHANDO",
