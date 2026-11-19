@@ -491,22 +491,19 @@ const PORTFOLIO_DATA = {
             "date": "September 2026",
             "images": [
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20for%20Harith%201.jpg",
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20Hari%20Malaysia%20for%20Harith%201.jpg",
+                "crop": "64 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20Hari%20Malaysia%20for%20Harith%202.jpg",
                 "crop": "61 50;100"
               },
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20Hari%20Malaysia%20for%20Harith%203.jpg",
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20for%20Harith%202.jpg",
-                "crop": "72 50;100"
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20Hari%20Malaysia%20for%20Harith%204.jpg",
+                "crop": "60 50;100"
               },
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20for%20Harith%203.jpg",
-              {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20for%20Harith%204.jpg",
-                "crop": "57 50;100"
-              },
-              {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20for%20Harith%205.jpg",
-                "crop": "50 50;100"
-              }
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20Hari%20Malaysia%20for%20Harith%205.jpg"
             ],
             "credits": [
               {
@@ -523,6 +520,18 @@ const PORTFOLIO_DATA = {
         "title": "Video Shoot Talent",
         "type": "video-grid",
         "items": [
+          {
+            "youtubeId": "3o7xcOgIjqs",
+            "caption": "J Project Garage JB (series in Facebook)",
+            "link": "https://www.facebook.com/reel/2052947538726001",
+            "date": "November 2026"
+          },
+          {
+            "youtubeId": "iBFdGTTaQjM",
+            "caption": "Karteal Signature",
+            "link": "https://www.tiktok.com/@kartealsignature/video/7708628550152228116",
+            "date": "November 2026"
+          },
           {
             "youtubeId": "z4p262gLy1M",
             "caption": "Top 1 Hair Salon",
