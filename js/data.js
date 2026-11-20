@@ -487,23 +487,49 @@ const PORTFOLIO_DATA = {
         "type": "photo-carousel",
         "groups": [
           {
+            "title": "Halloween",
+            "date": "November 2026",
+            "images": [
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%202%20for%20Halloween%201%20by%20EJay.jpeg",
+                "crop": "0 50;100"
+              },
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%202%20for%20Halloween%202%20by%20Jaron.jpeg",
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%202%20for%20Halloween%203%20by%20Jaron.jpeg",
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%202%20for%20Halloween%204%20by%20Jaron.jpeg",
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%202%20for%20Halloween%205%20by%20Ejay.jpeg"
+            ],
+            "credits": [
+              {
+                "role": "Photographer",
+                "name": "@momo_mini_jaron",
+                "link": "https://instagram.com/momo_mini_jaron"
+              },
+              {
+                "role": "Photographer",
+                "name": "@ejay.tan",
+                "link": "https://instagram.com/ejay.tan"
+              }
+            ]
+          },
+          {
             "title": "Hari Malaysia",
             "date": "September 2026",
             "images": [
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20Hari%20Malaysia%20for%20Harith%201.jpg",
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20for%20Hari%20Malaysia%201%20by%20Harith.jpg",
                 "crop": "64 50;100"
               },
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20Hari%20Malaysia%20for%20Harith%202.jpg",
-                "crop": "61 50;100"
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20for%20Hari%20Malaysia%202%20by%20Harith.jpg",
+                "crop": "67 50;100"
               },
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20Hari%20Malaysia%20for%20Harith%203.jpg",
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20for%20Hari%20Malaysia%203%20by%20Harith.jpg",
               {
-                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20Hari%20Malaysia%20for%20Harith%204.jpg",
-                "crop": "60 50;100"
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20for%20Hari%20Malaysia%204%20by%20Harith.jpg",
+                "crop": "59 50;100"
               },
-              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20Hari%20Malaysia%20for%20Harith%205.jpg"
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%201%20for%20Hari%20Malaysia%205%20by%20Harith.jpg"
             ],
             "credits": [
               {
@@ -520,6 +546,12 @@ const PORTFOLIO_DATA = {
         "title": "Video Shoot Talent",
         "type": "video-grid",
         "items": [
+          {
+            "youtubeId": "Q7ShIw6cvQg",
+            "caption": "Tritan Clothing (series in Instagram)",
+            "link": "https://www.instagram.com/reel/Df8v1Eihql0/",
+            "date": "November 2026"
+          },
           {
             "youtubeId": "3o7xcOgIjqs",
             "caption": "J Project Garage JB (series in Facebook)",
