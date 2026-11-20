@@ -218,8 +218,8 @@ const PORTFOLIO_DATA = {
     ],
     "categories": [
       {
-        "id": "modelling-work",
-        "title": "Modelling Work",
+        "id": "model",
+        "title": "Model",
         "type": "photo-carousel",
         "groups": [
           {
@@ -487,6 +487,43 @@ const PORTFOLIO_DATA = {
         "type": "photo-carousel",
         "groups": [
           {
+            "title": "CANON EOS R8 Mark Experience Tour 2026",
+            "date": "November 2026",
+            "images": [
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%203%20for%20CANON%201%20by%20Richard.jpeg",
+                "crop": "35 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%203%20for%20CANON%202%20by%20Mak.jpeg",
+                "crop": "86 50;100"
+              },
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%203%20for%20CANON%203%20by%20Richard.jpeg",
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%203%20for%20CANON%204%20by%20Mak.jpeg",
+                "crop": "0 50;100"
+              },
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Event%20Photoshoot%20Model/2026/Event%20Photoshoot%20Model%203%20for%20CANON%205%20by%20Mak.jpeg"
+            ],
+            "credits": [
+              {
+                "role": "Photographer",
+                "name": "@sow_richard",
+                "link": "https://instagram.com/sow_richard"
+              },
+              {
+                "role": "Photographer",
+                "name": "@makkammeng_",
+                "link": "https://instagram.com/makkammeng_"
+              },
+              {
+                "role": "MUA",
+                "name": "@minnie0412",
+                "link": "https://instagram.com/minnie0412"
+              }
+            ]
+          },
+          {
             "title": "Halloween",
             "date": "November 2026",
             "images": [
@@ -509,6 +546,11 @@ const PORTFOLIO_DATA = {
                 "role": "Photographer",
                 "name": "@ejay.tan",
                 "link": "https://instagram.com/ejay.tan"
+              },
+              {
+                "role": "MUA",
+                "name": "@coolmin95",
+                "link": "https://instagram.com/coolmin95"
               }
             ]
           },
@@ -657,8 +699,8 @@ const PORTFOLIO_DATA = {
         ]
       },
       {
-        "id": "content-creator",
-        "title": "Content Creator",
+        "id": "content-creator-(video-post)",
+        "title": "Content Creator (Video Post)",
         "type": "video-grid",
         "items": [
           {
@@ -786,6 +828,25 @@ const PORTFOLIO_DATA = {
             "caption": "Stikbrand.my",
             "link": "https://www.instagram.com/reel/DUsnmOtkwhy",
             "date": "February 2026"
+          }
+        ]
+      },
+      {
+        "id": "content-creator-(photo-post)",
+        "title": "Content Creator (Photo Post)",
+        "type": "canvas-grid",
+        "items": [
+          {
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Content%20Creator%20(Photo%20Post)/2026/Content%20Creation%202%20for%20Y.O.U..jpeg",
+            "caption": "Y.O.U.",
+            "link": "https://www.threads.com/share/BAW7RM2ttR",
+            "date": "November 2026"
+          },
+          {
+            "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Content%20Creator%20(Photo%20Post)/2026/Content%20Creation%201%20for%20barrenbliss.jpeg",
+            "caption": "barrenbliss",
+            "link": "https://www.threads.com/share/BAXryoP8nG",
+            "date": "November 2026"
           }
         ]
       },
