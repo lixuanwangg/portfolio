@@ -320,6 +320,47 @@ const PORTFOLIO_DATA = {
         "type": "photo-carousel",
         "groups": [
           {
+            "title": "@mixan_sl & @4dh.w4._",
+            "date": "November 2026",
+            "images": [
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%209%20for%20Mizan%20and%20Wa%201.jpeg",
+                "crop": "50 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%209%20for%20Mizan%20and%20Wa%202.jpeg",
+                "crop": "48 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%209%20for%20Mizan%20and%20Wa%203.jpeg",
+                "crop": "60 50;100"
+              },
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%209%20for%20Mizan%20and%20Wa%204.jpeg",
+                "crop": "71 50;100"
+              },
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%209%20for%20Mizan%20and%20Wa%205.jpeg"
+            ]
+          },
+          {
+            "title": "@anas.af_",
+            "date": "November 2026",
+            "images": [
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%208%20for%20Pak%20Tam%201.jpeg",
+                "crop": "37 50;100"
+              },
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%208%20for%20Pak%20Tam%202.jpeg",
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%208%20for%20Pak%20Tam%203.jpeg",
+              "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%208%20for%20Pak%20Tam%204.jpeg",
+              {
+                "src": "https://pub-441c3006f5d34d19b78757d88c4565f9.r2.dev/Talent%20Photoshoot/2026/Talent%20Photoshoot%208%20for%20Pak%20Tam%205.jpeg",
+                "crop": "50 50;100"
+              }
+            ],
+            "link": "https://instagram.com/anas.af_"
+          },
+          {
             "title": "@mixan_sl",
             "date": "September 2026",
             "images": [
